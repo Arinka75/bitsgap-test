@@ -1,0 +1,19 @@
+{
+  "name": "bitsgap-test",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:chromium": "npx playwright test --project=chromium",
+    "report": "npx playwright show-report",
+    "auth:setup": "npx playwright test tests/auth.setup.ts --project=setup",
+    "install:browsers": "npx playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "dotenv": "^16.3.0"
+  }
+}

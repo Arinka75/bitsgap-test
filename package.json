@@ -15,5 +15,13 @@
     "@types/node": "^20.0.0",
     "typescript": "^5.3.0",
     "dotenv": "^16.3.0"
+  },
+    "scripts": {
+    "auth:setup": "npx playwright test src/tests/auth.setup.ts --project=setup",
+    "debug:profile": "npx playwright test src/tests/debug-profile.ts --headed",
+    "debug:login": "npx playwright test src/tests/debug.setup.ts --headed",
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report"
   }
 }

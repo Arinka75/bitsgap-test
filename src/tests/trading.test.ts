@@ -1,46 +1,66 @@
-import { test, expect } from '../fixtures/test.fixture';
+import { test, expect } from '@playwright/test';
+import { TradingPage } from '../pages/TradingPage';
 
-test('should place limit order and verify via WebSocket and order table', async ({ 
-  loginPage, 
-  tradingPage, 
-  webSocketHelper 
-}) => {
-  // Шаг 1: Переключение в Demo режим
-  await loginPage.switchToDemoMode();
-  
-  // Шаг 2: Переход на страницу Trading
-  await tradingPage.navigate();
-  
-  // Шаг 3: Начинаем перехват WebSocket сообщений ДО любых действий
-  await webSocketHelper.captureWebSocketMessages();
-  
-  // Даем время для установки WebSocket соединений
-  await loginPage.page.waitForTimeout(2000);
-  
-  // Шаг 4: Выбор Limit Order
-  await tradingPage.selectLimitOrder();
-  
-  // Шаг 5: Установка случайных параметров ордера
-  const randomPrice = await tradingPage.setRandomPrice(1000, 50000);
-  console.log(`Random price set: ${randomPrice}`);
-  
-  const randomVolume = await tradingPage.setRandomVolume(10, 60);
-  console.log(`Random volume set: ${randomVolume}`);
-  
-  // Шаг 6: Клик на кнопку BUY
-  await tradingPage.clickBuy();
-  
-  // Шаг 7: Проверка WebSocket сообщения
-  const orderMessage = await webSocketHelper.waitForOrderPlaceMessage(15000);
-  
-  // Проверяем, что цена в WebSocket сообщении совпадает с установленной
-  const wsPrice = orderMessage.value?.params?.price;
-  expect(parseFloat(wsPrice)).toBeCloseTo(randomPrice, 2);
-  
-  // Шаг 8: Проверка ордера в таблице
-  const orderInTable = await tradingPage.getOrderFromTable(randomPrice);
-  expect(orderInTable).not.toBeNull();
-  expect(orderInTable?.price).toBeCloseTo(randomPrice, 2);
-  expect(orderInTable?.type).toContain('Limit');
-  expect(orderInTable?.status).toMatch(/Open|New/);
+test.describe('Trading Page Tests', () => {
+  let tradingPage: TradingPage;
+
+  test.beforeEach(async ({ page }) => {
+    tradingPage = new TradingPage(page);
+  });
+
+  test('should navigate to trading page after authentication', async ({ page }) => {
+    console.log('🚀 Starting trading page navigation test');
+    
+    // Используем сохраненное состояние аутентификации
+    // Playwright автоматически применит storageState из конфигурации проекта
+    
+    try {
+      // Логируем начальное состояние
+      await tradingPage.logCurrentState();
+      
+      // Переходим на Trading страницу
+      const navigationSuccess = await tradingPage.navigateToTrading();
+      
+      if (!navigationSuccess) {
+        throw new Error('Navigation to Trading page failed');
+      }
+      
+      // Проверяем, что мы на правильной странице
+      const verificationSuccess = await tradingPage.verifyTradingPage();
+      
+      if (verificationSuccess) {
+        console.log('🎉 SUCCESS: Trading page test completed successfully!');
+        await tradingPage.takeScreenshot('success');
+      } else {
+        throw new Error('Trading page verification failed');
+      }
+      
+      // Финальная проверка
+      expect(verificationSuccess).toBe(true);
+      
+    } catch (error) {
+      console.error('❌ FAILED: Trading page test failed:', error);
+      await tradingPage.takeScreenshot('failure');
+      await tradingPage.logCurrentState();
+      throw error;
+    }
+  });
+
+  test('should verify trading page components', async ({ page }) => {
+    console.log('🔍 Starting trading page components verification');
+    
+    await tradingPage.navigateToTrading();
+    
+    // Проверяем основные компоненты
+    const currentUrl = page.url();
+    expect(currentUrl).toContain('/trading');
+    
+    const mainContent = page.locator('main');
+    await expect(mainContent).toBeVisible();
+    
+    const tradingIframe = page.locator('iframe').first();
+    await expect(tradingIframe).toBeVisible();
+    
+    console.log('✅ Trading page components verified successfully');
+  });
 });

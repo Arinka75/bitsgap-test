@@ -1,0 +1,268 @@
+{
+  "cookies": [
+    {
+      "name": "resscr",
+      "value": "{%22res%22:%221280x720%22%2C%22scr%22:%221280x720%22}",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookieId",
+      "value": "",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "C",
+      "value": "1",
+      "domain": ".adform.net",
+      "path": "/",
+      "expires": 1763064769.865123,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "uid",
+      "value": "9114921652027741315",
+      "domain": ".adform.net",
+      "path": "/",
+      "expires": 1765570372.292427,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1722198240.1760386370",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": 1768162370,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1373347679.1760386370",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": 1794946371.31989,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ar_debug",
+      "value": "1",
+      "domain": ".www.google-analytics.com",
+      "path": "/",
+      "expires": 1768162371.416394,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_2SNRKH4684",
+      "value": "GS2.1.s1760386370$o1$g1$t1760386371$j59$l0$h0",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": 1794946371.527356,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_iidt",
+      "value": "TbYMeDnIPAmlJE0qBqWGq7QNUA6Qhj4vpw4aMohtYKCIpuA7ZdHORWCgfz+v/EP0KE48r/J5li/+fWxqIILa0cdgpvlMXfQh9gE+5KpHUJAwYzMaSg==",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": 1791922372.409676,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_vid_t",
+      "value": "7wi4Risxfc5F4mqUhWltl2wM4Poj2pqg3OZcYaQQ5P3y5+rD4I55Nt/JYty9E38HGDHAooymSvP81fJk9m9uKdB8t75S/F2lMTvSrJvHUXUoHYHkAQ==",
+      "domain": ".bitsgap.com",
+      "path": "/",
+      "expires": 1791922372,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://app.bitsgap.com",
+      "localStorage": [
+        {
+          "name": "tvlocalstorage.available",
+          "value": "true"
+        },
+        {
+          "name": "tv.logger.loglevel",
+          "value": "2"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1760386371315},\"expires\":1768162371315}}"
+        },
+        {
+          "name": "bg.activeBotsTableCurrencyMode",
+          "value": "\"profit\""
+        },
+        {
+          "name": "bg.theme",
+          "value": "\"day\""
+        },
+        {
+          "name": "bg.tradeMode",
+          "value": "\"real\""
+        },
+        {
+          "name": "bg.tradingView.chart.interval.bots",
+          "value": "\"60\""
+        },
+        {
+          "name": "ZD-suid",
+          "value": "{\"id\":\"8e780c1a851b4fea8970b2ebf40def7c\",\"expiry\":1760387273116,\"tabs\":{\"count\":1,\"expiry\":0}}"
+        },
+        {
+          "name": "bg.pair",
+          "value": "\"BTC_USDT\""
+        },
+        {
+          "name": "tradingview.chartproperties",
+          "value": "{\"timezone\":\"Europe/Moscow\",\"priceScaleSelectionStrategyName\":\"auto\",\"paneProperties\":{\"backgroundType\":\"solid\",\"background\":\"#ffffff\",\"backgroundGradientStartColor\":\"#ffffff\",\"backgroundGradientEndColor\":\"#ffffff\",\"gridLinesMode\":\"both\",\"vertGridProperties\":{\"color\":\"rgba(42, 46, 57, 0.06)\",\"style\":0},\"horzGridProperties\":{\"color\":\"rgba(42, 46, 57, 0.06)\",\"style\":0},\"crossHairProperties\":{\"color\":\"#9598A1\",\"style\":2,\"transparency\":0,\"width\":1},\"topMargin\":10,\"bottomMargin\":8,\"axisProperties\":{\"autoScale\":true,\"autoScaleDisabled\":false,\"lockScale\":false,\"percentage\":false,\"percentageDisabled\":false,\"indexedTo100\":false,\"log\":false,\"logDisabled\":false,\"alignLabels\":true,\"isInverted\":false},\"legendProperties\":{\"showStudyArguments\":true,\"showStudyTitles\":true,\"showStudyValues\":true,\"showSeriesTitle\":false,\"showSeriesOHLC\":true,\"showLegend\":true,\"showLastDayChange\":false,\"showBarChange\":true,\"showVolume\":false,\"showBackground\":true,\"showPriceSource\":true,\"backgroundTransparency\":50,\"showLogo\":true},\"separatorColor\":\"#E0E3EB\"},\"scalesProperties\":{\"backgroundColor\":\"#ffffff\",\"lineColor\":\"rgba(42, 46, 57, 0)\",\"textColor\":\"#131722\",\"fontSize\":11,\"scaleSeriesOnly\":false,\"showSeriesLastValue\":true,\"seriesLastValueMode\":1,\"showSeriesPrevCloseValue\":false,\"showStudyLastValue\":false,\"showSymbolLabels\":false,\"showStudyPlotLabels\":false,\"showBidAskLabels\":false,\"showPrePostMarketPriceLabel\":true,\"showFundamentalNameLabel\":false,\"showFundamentalLastValue\":true,\"barSpacing\":6},\"mainSeriesProperties\":{\"style\":1,\"esdShowDividends\":true,\"esdShowSplits\":true,\"esdShowEarnings\":true,\"esdShowBreaks\":false,\"esdFlagSize\":2,\"showContinuousContractSwitches\":true,\"showContinuousContractSwitchesBreaks\":false,\"showFuturesContractExpiration\":true,\"showLastNews\":true,\"showCountdown\":false,\"bidAsk\":{\"visible\":false,\"lineStyle\":1,\"lineWidth\":1,\"bidLineColor\":\"#2962FF\",\"askLineColor\":\"#F7525F\"},\"prePostMarket\":{\"visible\":true,\"lineStyle\":1,\"lineWidth\":1,\"preMarketColor\":\"#FB8C00\",\"postMarketColor\":\"#2962FF\"},\"highLowAvgPrice\":{\"highLowPriceLinesVisible\":false,\"highLowPriceLabelsVisible\":false,\"averageClosePriceLineVisible\":false,\"averageClosePriceLabelVisible\":false,\"highLowPriceLinesColor\":\"\",\"highLowPriceLinesWidth\":1,\"averagePriceLineColor\":\"\",\"averagePriceLineWidth\":1},\"visible\":true,\"showPriceLine\":true,\"priceLineWidth\":1,\"priceLineColor\":\"\",\"baseLineColor\":\"#B2B5BE\",\"showPrevClosePriceLine\":false,\"prevClosePriceLineWidth\":1,\"prevClosePriceLineColor\":\"#555555\",\"minTick\":\"default\",\"dividendsAdjustment\":{},\"backAdjustment\":false,\"settlementAsClose\":true,\"sessionId\":\"regular\",\"sessVis\":false,\"statusViewStyle\":{\"fontSize\":16,\"showExchange\":true,\"showInterval\":true,\"symbolTextSource\":\"description\"},\"candleStyle\":{\"upColor\":\"#26a69a\",\"downColor\":\"#ef5350\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#26a69a\",\"borderDownColor\":\"#ef5350\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#26a69a\",\"wickDownColor\":\"#ef5350\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"volCandlesStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"hollowCandleStyle\":{\"upColor\":\"#26a69a\",\"downColor\":\"#ef5350\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#26a69a\",\"borderUpColor\":\"#26a69a\",\"borderDownColor\":\"#ef5350\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#26a69a\",\"wickDownColor\":\"#ef5350\",\"drawBody\":true},\"haStyle\":{\"upColor\":\"#26a69a\",\"downColor\":\"#ef5350\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"rgba(55, 134, 88, 1)\",\"borderUpColor\":\"#26a69a\",\"borderDownColor\":\"#ef5350\",\"wickColor\":\"rgba(115, 115, 117, 1)\",\"wickUpColor\":\"#26a69a\",\"wickDownColor\":\"#ef5350\",\"showRealLastPrice\":false,\"barColorsOnPrevClose\":false,\"inputs\":{},\"inputInfo\":{},\"drawBody\":true},\"barStyle\":{\"upColor\":\"#26a69a\",\"downColor\":\"#ef5350\",\"barColorsOnPrevClose\":false,\"dontDrawOpen\":false,\"thinBars\":true},\"hiloStyle\":{\"color\":\"#2962FF\",\"showBorders\":true,\"borderColor\":\"#2962FF\",\"showLabels\":true,\"labelColor\":\"#2962FF\",\"drawBody\":true},\"columnStyle\":{\"upColor\":\"rgba(8, 153, 129, 0.5)\",\"downColor\":\"rgba(242, 54, 69, 0.5)\",\"barColorsOnPrevClose\":true,\"priceSource\":\"close\"},\"lineStyle\":{\"color\":\"#2196f3\",\"linestyle\":0,\"linewidth\":3,\"priceSource\":\"close\"},\"tpoStyle\":{},\"svpStyle\":{},\"lineWithMarkersStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"steplineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"areaStyle\":{\"color1\":\"#2196f3\",\"color2\":\"#2196f3\",\"linecolor\":\"#2196f3\",\"linestyle\":0,\"linewidth\":1,\"priceSource\":\"close\",\"transparency\":100},\"hlcAreaStyle\":{\"highLineColor\":\"#089981\",\"highLineStyle\":0,\"highLineWidth\":2,\"lowLineColor\":\"#F23645\",\"lowLineStyle\":0,\"lowLineWidth\":2,\"closeLineColor\":\"#868993\",\"closeLineStyle\":0,\"closeLineWidth\":2,\"highCloseFillColor\":\"rgba(8, 153, 129, 0.2)\",\"closeLowFillColor\":\"rgba(242, 54, 69, 0.2)\"},\"priceAxisProperties\":{\"autoScale\":true,\"autoScaleDisabled\":false,\"lockScale\":false,\"percentage\":false,\"percentageDisabled\":false,\"indexedTo100\":false,\"log\":false,\"logDisabled\":false,\"isInverted\":false,\"alignLabels\":true},\"renkoStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"inputs\":{\"source\":\"close\",\"sources\":\"Close\",\"boxSize\":3,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"wicks\":true},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"wicks\":{\"name\":\"Wicks\"}}},\"pbStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"lb\":3},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"lb\":{\"name\":\"Number of line\"}}},\"kagiStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"reversalAmount\":1},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"reversalAmount\":{\"name\":\"Reversal amount\"}}},\"pnfStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"sources\":\"Close\",\"reversalAmount\":3,\"boxSize\":1,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"oneStepBackBuilding\":false},\"inputInfo\":{\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"reversalAmount\":{\"name\":\"Reversal amount\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"oneStepBackBuilding\":{\"name\":\"One step back building\"}}},\"baselineStyle\":{\"baselineColor\":\"rgba(117, 134, 150, 1)\",\"topFillColor1\":\"rgba(38, 166, 154, 0.05)\",\"topFillColor2\":\"rgba(38, 166, 154, 0.05)\",\"bottomFillColor1\":\"rgba(239, 83, 80, 0.05)\",\"bottomFillColor2\":\"rgba(239, 83, 80, 0.05)\",\"topLineColor\":\"rgba(38, 166, 154, 1)\",\"bottomLineColor\":\"rgba(239, 83, 80, 1)\",\"topLineWidth\":3,\"bottomLineWidth\":3,\"priceSource\":\"close\",\"transparency\":50,\"baseLevelPercentage\":50},\"rangeStyle\":{\"barStyle\":0,\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"thinBars\":true,\"candlesUpColor\":\"#089981\",\"candlesDownColor\":\"#F23645\",\"candlesBorderUpColor\":\"#089981\",\"candlesBorderDownColor\":\"#F23645\",\"candlesWickUpColor\":\"#089981\",\"candlesWickDownColor\":\"#F23645\",\"inputs\":{\"range\":10,\"phantomBars\":false},\"inputInfo\":{\"range\":{\"name\":\"Range\"},\"phantomBars\":{\"name\":\"Phantom bars\"}}},\"volFootprintStyle\":{},\"symbol\":\"binance:BTC_USDT\",\"shortName\":\"\",\"timeframe\":\"\",\"onWidget\":false,\"interval\":\"60\",\"currencyId\":null,\"unitId\":null},\"chartEventsSourceProperties\":{\"visible\":true,\"futureOnly\":true,\"breaks\":{\"color\":\"#555555\",\"visible\":false,\"style\":2,\"width\":1}},\"tradingProperties\":{\"showPositions\":true,\"positionPL\":{\"visibility\":true,\"display\":0},\"bracketsPL\":{\"visibility\":true,\"display\":0},\"showOrders\":true,\"showExecutions\":true,\"showExecutionsLabels\":false,\"showReverse\":true,\"horizontalAlignment\":2,\"extendLeft\":true,\"lineLength\":5,\"lineWidth\":1,\"lineStyle\":0},\"editorFontsList\":{\"0\":\"Verdana\",\"1\":\"Courier New\",\"2\":\"Times New Roman\",\"3\":\"Arial\"},\"volumePaneSize\":\"large\"}"
+        },
+        {
+          "name": "bg.refreshToken",
+          "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYyOTc4MzY5LCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI0NGZjNDJjM2I1M2NkODBlZGY3ZDUxODJiMWVhYjkxOSIsImlzcyI6ImJpdHNnYXAtcmVuZXciLCJqdGkiOiJiaXRzZ2FwX3RzdEBjdXZib3guY29tIiwibmVoIjoiNjg0YWJlZDIyZmNjMGU2MjA1ZDk2M2NlNTU1YTdmODIiLCJyZWZlcnJhbCI6ImM3M2NiNzE1Iiwic2loIjoiMWQ4MGMzMTA5ODUyNDE4ZjQxNmQxZDI2YzIwOGM2YmUiLCJzcnYiOlsiYXBwIiwib2xkIiwidmFyIiwic2lyIiwic3RyIiwid3MiLCJoYWkiLCJpbnNpZGVyIiwid3NzIiwiZHdzIiwiYXZ2IiwiYmV0YSIsImRldi13cyIsInJjIiwib25ib2FyZGluZyIsInN0YWdpbmciLCJzdGFnaW5nMiIsInN0YWdpbmczIiwic3RhZ2luZzQiLCJzdGFnaW5nNSIsInN0YWdpbmc2Iiwic3RhZ2luZzciLCJxYSIsInFhMSIsInFhMiIsInR3YSJdLCJ0ZCI6MTM0fQ.eK2im3FVe8baySSJCitm5wZ4yLL1_shjCDATsLzP4gg\""
+        },
+        {
+          "name": "bg.discountPromoHidden",
+          "value": "{}"
+        },
+        {
+          "name": "bg.chatToken",
+          "value": "\"eyJhbGciOiJIUzI1NiIsImtpZCI6ImFwcF82NGRlMGJlNGYzOWE3ODQ0MThjNTVjN2MiLCJ0eXAiOiJKV1QifQ.eyJlbWFpbCI6ImJpdHNnYXBfdHN0QGN1dmJveC5jb20iLCJleHAiOjE3NjI5NzgzNzEsImV4dGVybmFsX2lkIjoiYzczY2I3MTUiLCJzY29wZSI6InVzZXIifQ.BLOLbXQ0QjehG80y6ybi85EjoVIHsDo7SmvKFVjUoNk\""
+        },
+        {
+          "name": "ZnAtYml0c2dhcF90c3RAY3V2Ym94LmNvbQ",
+          "value": "dP4HsqhrhhWzgyGCRu08"
+        },
+        {
+          "name": "ZD-buid",
+          "value": "404eab5f633f41608cf05c51172586b0"
+        },
+        {
+          "name": "tradingview.current_theme.name",
+          "value": "light"
+        },
+        {
+          "name": "bg.lng",
+          "value": "\"en\""
+        },
+        {
+          "name": "bg.pwaInstallPromotionStep",
+          "value": "\"wasNotPromoted\""
+        },
+        {
+          "name": "bg.botActiveTab",
+          "value": "\"active-bots\""
+        },
+        {
+          "name": "bg.trading-view",
+          "value": "\"standard\""
+        },
+        {
+          "name": "bg.tradingView.chart.interval.trading",
+          "value": "\"60\""
+        },
+        {
+          "name": "tradingview.BarsMarksContainer.visibile",
+          "value": "true"
+        },
+        {
+          "name": "64be7476e48e102e065067e1.clientId",
+          "value": "404eab5f633f41608cf05c51172586b0"
+        },
+        {
+          "name": "tv.logger.logHighRate",
+          "value": "false"
+        },
+        {
+          "name": "_vid_lr",
+          "value": "[[\"us1vW7rONI8k\",\"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\"]]"
+        },
+        {
+          "name": "_vid_t",
+          "value": "7wi4Risxfc5F4mqUhWltl2wM4Poj2pqg3OZcYaQQ5P3y5+rD4I55Nt/JYty9E38HGDHAooymSvP81fJk9m9uKdB8t75S/F2lMTvSrJvHUXUoHYHkAQ=="
+        },
+        {
+          "name": "bg.market",
+          "value": "\"binance\""
+        },
+        {
+          "name": "bg.pairSelect.sortDirection",
+          "value": "\"desc\""
+        },
+        {
+          "name": "i18nextLng",
+          "value": "en"
+        },
+        {
+          "name": "bg.pairSelect.sortBy",
+          "value": "\"dayVolume\""
+        },
+        {
+          "name": "bg.orderCurrencyMode",
+          "value": "\"base\""
+        },
+        {
+          "name": "bg.accessToken",
+          "value": "\"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYwMzg2OTY5LCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI0NGZjNDJjM2I1M2NkODBlZGY3ZDUxODJiMWVhYjkxOSIsImlzcyI6ImJpdHNnYXAtYXV0aCIsImp0aSI6ImJpdHNnYXBfdHN0QGN1dmJveC5jb20iLCJuZWgiOiI2ODRhYmVkMjJmY2MwZTYyMDVkOTYzY2U1NTVhN2Y4MiIsInJlZmVycmFsIjoiYzczY2I3MTUiLCJzaWgiOiIxZDgwYzMxMDk4NTI0MThmNDE2ZDFkMjZjMjA4YzZiZSIsInNydiI6WyJhcHAiLCJvbGQiLCJ2YXIiLCJzaXIiLCJzdHIiLCJ3cyIsImhhaSIsImluc2lkZXIiLCJ3c3MiLCJkd3MiLCJhdnYiLCJiZXRhIiwiZGV2LXdzIiwicmMiLCJvbmJvYXJkaW5nIiwic3RhZ2luZyIsInN0YWdpbmcyIiwic3RhZ2luZzMiLCJzdGFnaW5nNCIsInN0YWdpbmc1Iiwic3RhZ2luZzYiLCJzdGFnaW5nNyIsInFhIiwicWExIiwicWEyIiwidHdhIl0sInRkIjoxMzR9.a8if4JBOJc6NzmGd1SOwMYrJlmxtCijQJBoxLfKEpH1jv0RYGkr1vGfDaHZxn2AZ20AXk_I1kCYN1J0FGREDAg\""
+        },
+        {
+          "name": "bg.botsTabsFilter",
+          "value": "\"all\""
+        },
+        {
+          "name": "tradingview.chartproperties.mainSeriesProperties",
+          "value": "{\"style\":1,\"esdShowDividends\":true,\"esdShowSplits\":true,\"esdShowEarnings\":true,\"esdShowBreaks\":false,\"esdFlagSize\":2,\"showContinuousContractSwitches\":true,\"showContinuousContractSwitchesBreaks\":false,\"showFuturesContractExpiration\":true,\"showLastNews\":true,\"showCountdown\":false,\"bidAsk\":{\"visible\":false,\"lineStyle\":1,\"lineWidth\":1,\"bidLineColor\":\"#2962FF\",\"askLineColor\":\"#F7525F\"},\"prePostMarket\":{\"visible\":true,\"lineStyle\":1,\"lineWidth\":1,\"preMarketColor\":\"#FB8C00\",\"postMarketColor\":\"#2962FF\"},\"highLowAvgPrice\":{\"highLowPriceLinesVisible\":false,\"highLowPriceLabelsVisible\":false,\"averageClosePriceLineVisible\":false,\"averageClosePriceLabelVisible\":false,\"highLowPriceLinesColor\":\"\",\"highLowPriceLinesWidth\":1,\"averagePriceLineColor\":\"\",\"averagePriceLineWidth\":1},\"showPriceLine\":true,\"priceLineWidth\":1,\"priceLineColor\":\"\",\"baseLineColor\":\"#B2B5BE\",\"showPrevClosePriceLine\":false,\"prevClosePriceLineWidth\":1,\"prevClosePriceLineColor\":\"#555555\",\"minTick\":\"default\",\"dividendsAdjustment\":{},\"backAdjustment\":false,\"settlementAsClose\":true,\"sessionId\":\"regular\",\"sessVis\":false,\"statusViewStyle\":{\"fontSize\":16,\"showExchange\":true,\"showInterval\":true,\"symbolTextSource\":\"description\"},\"candleStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"volCandlesStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"hollowCandleStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"drawBody\":true},\"haStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"rgba(115, 115, 117, 1)\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"showRealLastPrice\":false,\"barColorsOnPrevClose\":false,\"inputs\":{},\"inputInfo\":{},\"drawBody\":true},\"barStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"dontDrawOpen\":false,\"thinBars\":true},\"hiloStyle\":{\"color\":\"#2962FF\",\"showBorders\":true,\"borderColor\":\"#2962FF\",\"showLabels\":true,\"labelColor\":\"#2962FF\",\"drawBody\":true},\"columnStyle\":{\"upColor\":\"rgba(8, 153, 129, 0.5)\",\"downColor\":\"rgba(242, 54, 69, 0.5)\",\"barColorsOnPrevClose\":true,\"priceSource\":\"close\"},\"lineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":3,\"priceSource\":\"close\"},\"tpoStyle\":{},\"svpStyle\":{},\"lineWithMarkersStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"steplineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"areaStyle\":{\"color1\":\"rgba(41, 98, 255, 0.28)\",\"color2\":\"#2962FF\",\"linecolor\":\"#2962FF\",\"linestyle\":0,\"linewidth\":1,\"priceSource\":\"close\",\"transparency\":100},\"hlcAreaStyle\":{\"highLineColor\":\"#089981\",\"highLineStyle\":0,\"highLineWidth\":2,\"lowLineColor\":\"#F23645\",\"lowLineStyle\":0,\"lowLineWidth\":2,\"closeLineColor\":\"#868993\",\"closeLineStyle\":0,\"closeLineWidth\":2,\"highCloseFillColor\":\"rgba(8, 153, 129, 0.2)\",\"closeLowFillColor\":\"rgba(242, 54, 69, 0.2)\"},\"renkoStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"inputs\":{\"source\":\"close\",\"sources\":\"Close\",\"boxSize\":3,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"wicks\":true},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"wicks\":{\"name\":\"Wicks\"}}},\"pbStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"lb\":3},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"lb\":{\"name\":\"Number of line\"}}},\"kagiStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"reversalAmount\":1},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"reversalAmount\":{\"name\":\"Reversal amount\"}}},\"pnfStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"sources\":\"Close\",\"reversalAmount\":3,\"boxSize\":1,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"oneStepBackBuilding\":false},\"inputInfo\":{\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"reversalAmount\":{\"name\":\"Reversal amount\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"oneStepBackBuilding\":{\"name\":\"One step back building\"}}},\"baselineStyle\":{\"baselineColor\":\"#758696\",\"topFillColor1\":\"rgba(8, 153, 129, 0.28)\",\"topFillColor2\":\"rgba(8, 153, 129, 0.05)\",\"bottomFillColor1\":\"rgba(242, 54, 69, 0.05)\",\"bottomFillColor2\":\"rgba(242, 54, 69, 0.28)\",\"topLineColor\":\"#089981\",\"bottomLineColor\":\"#F23645\",\"topLineWidth\":3,\"bottomLineWidth\":3,\"priceSource\":\"close\",\"transparency\":50,\"baseLevelPercentage\":50},\"rangeStyle\":{\"barStyle\":0,\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"thinBars\":true,\"candlesUpColor\":\"#089981\",\"candlesDownColor\":\"#F23645\",\"candlesBorderUpColor\":\"#089981\",\"candlesBorderDownColor\":\"#F23645\",\"candlesWickUpColor\":\"#089981\",\"candlesWickDownColor\":\"#F23645\",\"inputs\":{\"range\":10,\"phantomBars\":false},\"inputInfo\":{\"range\":{\"name\":\"Range\"},\"phantomBars\":{\"name\":\"Phantom bars\"}}},\"volFootprintStyle\":{},\"symbol\":\"BINANCE:BTC_USDT\",\"shortName\":\"binance:BTC_USDT\",\"timeframe\":\"\",\"onWidget\":false,\"interval\":\"60\",\"unitId\":null,\"priceAxisProperties\":{\"autoScale\":true,\"alignLabels\":true}}"
+        },
+        {
+          "name": "staged_notifications",
+          "value": "{}"
+        }
+      ]
+    },
+    {
+      "origin": "https://bitsgap.com",
+      "localStorage": [
+        {
+          "name": "renewToken",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYyOTc4MzY5LCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI0NGZjNDJjM2I1M2NkODBlZGY3ZDUxODJiMWVhYjkxOSIsImlzcyI6ImJpdHNnYXAtcmVuZXciLCJqdGkiOiJiaXRzZ2FwX3RzdEBjdXZib3guY29tIiwibmVoIjoiNjg0YWJlZDIyZmNjMGU2MjA1ZDk2M2NlNTU1YTdmODIiLCJyZWZlcnJhbCI6ImM3M2NiNzE1Iiwic2loIjoiMWQ4MGMzMTA5ODUyNDE4ZjQxNmQxZDI2YzIwOGM2YmUiLCJzcnYiOlsiYXBwIiwib2xkIiwidmFyIiwic2lyIiwic3RyIiwid3MiLCJoYWkiLCJpbnNpZGVyIiwid3NzIiwiZHdzIiwiYXZ2IiwiYmV0YSIsImRldi13cyIsInJjIiwib25ib2FyZGluZyIsInN0YWdpbmciLCJzdGFnaW5nMiIsInN0YWdpbmczIiwic3RhZ2luZzQiLCJzdGFnaW5nNSIsInN0YWdpbmc2Iiwic3RhZ2luZzciLCJxYSIsInFhMSIsInFhMiIsInR3YSJdLCJ0ZCI6MTM0fQ.eK2im3FVe8baySSJCitm5wZ4yLL1_shjCDATsLzP4gg"
+        },
+        {
+          "name": "lastEmail",
+          "value": "bitsgap_tst@cuvbox.com"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1760386370399},\"expires\":1768162370399}}"
+        }
+      ]
+    }
+  ]
+}

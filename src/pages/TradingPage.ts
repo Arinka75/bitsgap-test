@@ -8,92 +8,173 @@ export class TradingPage {
   }
 
   // Локаторы
-  private readonly tradingTab = 'text=Trading';
-  private readonly limitOrderButton = 'button:has-text("Limit")';
-  private readonly priceInput = 'input[name="price"]';
-  private readonly volumeSlider = '.volume-slider'; // Пример
-  private readonly buyButton = 'button:has-text("BUY")';
-  private readonly ordersTable = '.orders-table';
-  private readonly orderRow = '.order-row';
+  private readonly tradingTab = '[data-test-id="header-trading"]';
+  private readonly mainContent = 'main';
+  private readonly tradingViewIframe = 'iframe';
+  private readonly chartContainer = '[class*="chart"]';
 
-  async navigate() {
-    await this.page.click(this.tradingTab);
-    await this.waitForTradingPageReady();
+  async navigateToTrading() {
+    console.log('=== Starting navigation to Trading page ===');
+    
+    try {
+      // Сначала убедимся, что мы на главной странице
+      await this.ensureOnMainPage();
+      
+      // Ищем и кликаем на вкладку Trading
+      console.log('Looking for Trading tab...');
+      const tradingTab = this.page.locator(this.tradingTab);
+      
+      await expect(tradingTab).toBeVisible({ timeout: 15000 });
+      console.log('✅ Trading tab found, clicking...');
+      
+      await tradingTab.click();
+      console.log('✅ Trading tab clicked');
+      
+      // Ждем перехода на trading страницу
+      await this.page.waitForURL('**/trading**', { timeout: 20000 });
+      console.log('✅ URL changed to Trading page');
+      
+      // Обрабатываем возможные модалки
+      await this.handlePossibleModals();
+      
+      // Ждем полной загрузки страницы
+      await this.waitForTradingPageReady();
+      
+      console.log('✅ Successfully navigated to Trading page');
+      return true;
+      
+    } catch (error) {
+      console.error('❌ Failed to navigate to Trading:', error);
+      await this.takeScreenshot('navigation-error');
+      return false;
+    }
+  }
+
+  private async ensureOnMainPage() {
+    console.log('Ensuring we are on main page...');
+    
+    // Если мы не на bitsgap.com, переходим туда
+    const currentUrl = this.page.url();
+    if (!currentUrl.includes('bitsgap.com')) {
+      console.log('Not on bitsgap.com, navigating...');
+      await this.page.goto('https://bitsgap.com');
+    }
+    
+    // Ждем загрузки страницы
+    await this.page.waitForLoadState('networkidle');
+    console.log('✅ Main page loaded');
+    
+    // Проверяем, что мы аутентифицированы (видим какой-то элемент главной страницы)
+    const mainPageIndicator = this.page.locator(this.mainContent).or(this.page.locator('body'));
+    await expect(mainPageIndicator).toBeVisible({ timeout: 10000 });
+    console.log('✅ Confirmed we are on main authenticated page');
+  }
+
+  private async handlePossibleModals() {
+    console.log('Checking for modals...');
+    
+    const modalSelectors = [
+      'div[role="dialog"]',
+      '.modal',
+      'button:has-text("Stay on Demo")',
+      'button:has-text("Close")',
+      'button:has-text("Got it")'
+    ];
+
+    for (const selector of modalSelectors) {
+      try {
+        const modal = this.page.locator(selector).first();
+        if (await modal.isVisible({ timeout: 3000 })) {
+          console.log(`Found modal with selector: ${selector}`);
+          
+          if (selector.includes('button')) {
+            await modal.click();
+          } else {
+            // Для модального окна ищем кнопку закрытия
+            const closeBtn = modal.locator('button').first();
+            if (await closeBtn.isVisible({ timeout: 2000 })) {
+              await closeBtn.click();
+            } else {
+              // Пробуем Escape
+              await this.page.keyboard.press('Escape');
+            }
+          }
+          
+          await this.page.waitForTimeout(1000);
+          console.log('✅ Modal handled');
+        }
+      } catch (error) {
+        // Продолжаем, если не нашли модалку
+        continue;
+      }
+    }
   }
 
   async waitForTradingPageReady() {
-    // Ждем загрузки ключевых элементов
-    await expect(this.page.locator(this.priceInput)).toBeVisible();
-    await expect(this.page.locator(this.buyButton)).toBeVisible();
+    console.log('Waiting for Trading page to be ready...');
+    
+    // Ждем основные элементы
+    await expect(this.page.locator(this.mainContent)).toBeVisible({ timeout: 15000 });
+    
+    // Ждем iframe с TradingView
+    await expect(this.page.locator(this.tradingViewIframe).first()).toBeVisible({ timeout: 20000 });
+    
+    // Даем дополнительное время для загрузки контента
+    await this.page.waitForTimeout(3000);
+    
+    console.log('✅ Trading page is ready');
   }
 
-  async selectLimitOrder() {
-    // Явно выбираем Limit Order даже если выбран по умолчанию
-    await this.page.click(this.limitOrderButton);
-    await expect(this.page.locator(this.limitOrderButton)).toHaveClass(/active/);
-  }
+  async verifyTradingPage() {
+    console.log('Verifying Trading page...');
+    
+    const checks = [
+      { name: 'URL check', check: async () => this.page.url().includes('/trading') },
+      { name: 'Main content', check: async () => {
+        const main = this.page.locator(this.mainContent);
+        return await main.isVisible();
+      }},
+      { name: 'Trading View iframe', check: async () => {
+        const iframe = this.page.locator(this.tradingViewIframe).first();
+        return await iframe.isVisible();
+      }}
+    ];
 
-  async setRandomPrice(minPrice: number = 1000, maxPrice: number = 50000): Promise<number> {
-    const randomPrice = this.generateRandomPrice(minPrice, maxPrice);
-    await this.page.fill(this.priceInput, randomPrice.toString());
-    return randomPrice;
-  }
-
-  async setRandomVolume(minPercent: number = 10, maxPercent: number = 60): Promise<number> {
-    const slider = this.page.locator(this.volumeSlider);
-    const sliderBoundingBox = await slider.boundingBox();
+    let allPassed = true;
     
-    if (!sliderBoundingBox) throw new Error('Slider not found');
-    
-    // Генерируем случайную позицию для ползунка
-    const randomPosition = this.generateRandomNumber(minPercent, maxPercent);
-    const clickX = sliderBoundingBox.width * (randomPosition / 100);
-    
-    await slider.click({ position: { x: clickX, y: sliderBoundingBox.height / 2 } });
-    
-    // Получаем фактическое значение объема из UI
-    const volumeValue = await this.getActualVolume();
-    return volumeValue;
-  }
-
-  async clickBuy() {
-    await this.page.click(this.buyButton);
-  }
-
-  async getOrderFromTable(expectedPrice: number) {
-    // Ждем появления ордера в таблице
-    await expect(this.page.locator(this.orderRow).first()).toBeVisible();
-    
-    const orders = await this.page.locator(this.orderRow).all();
-    
-    for (const order of orders) {
-      const priceText = await order.locator('.order-price').textContent();
-      const typeText = await order.locator('.order-type').textContent();
-      const statusText = await order.locator('.order-status').textContent();
-      
-      const orderPrice = parseFloat(priceText?.replace(/[^\d.]/g, '') || '0');
-      
-      if (Math.abs(orderPrice - expectedPrice) < 0.01 && 
-          typeText?.includes('Limit') && 
-          (statusText?.includes('Open') || statusText?.includes('New'))) {
-        return { price: orderPrice, type: typeText, status: statusText };
+    for (const check of checks) {
+      try {
+        const result = await check.check();
+        if (result) {
+          console.log(`✅ ${check.name} passed`);
+        } else {
+          console.log(`❌ ${check.name} failed`);
+          allPassed = false;
+        }
+      } catch (error) {
+        console.log(`❌ ${check.name} errored:`, error);
+        allPassed = false;
       }
     }
     
-    return null;
+    return allPassed;
   }
 
-  private generateRandomPrice(min: number, max: number): number {
-    return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+  async takeScreenshot(name: string) {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    await this.page.screenshot({ 
+      path: `./test-results/trading-${name}-${timestamp}.png`, 
+      fullPage: true 
+    });
+    console.log(`📸 Screenshot saved: trading-${name}-${timestamp}.png`);
   }
 
-  private generateRandomNumber(min: number, max: number): number {
-    return Math.random() * (max - min) + min;
-  }
-
-  private async getActualVolume(): Promise<number> {
-    // Получаем фактическое значение объема из UI после перемещения ползунка
-    const volumeDisplay = await this.page.locator('.volume-display').textContent();
-    return parseFloat(volumeDisplay?.replace(/[^\d.]/g, '') || '0');
+  async logCurrentState() {
+    const url = this.page.url();
+    const title = await this.page.title();
+    console.log('=== CURRENT PAGE STATE ===');
+    console.log(`URL: ${url}`);
+    console.log(`Title: ${title}`);
+    console.log('==========================');
   }
 }

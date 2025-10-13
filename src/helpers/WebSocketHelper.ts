@@ -3,44 +3,55 @@ import { Page } from '@playwright/test';
 export class WebSocketHelper {
   private messages: any[] = [];
   private page: Page;
-  private isCapturing: boolean = false;
 
   constructor(page: Page) {
     this.page = page;
   }
 
   async captureWebSocketMessages() {
-    if (this.isCapturing) {
-      return; // Уже запущено
-    }
-
-    this.isCapturing = true;
+    console.log('Starting WebSocket message capture...');
     
-    // Подписываемся на WebSocket сообщения
     this.page.on('websocket', ws => {
-      console.log(`WebSocket opened: ${ws.url()}`);
+      console.log(`WebSocket connected to: ${ws.url()}`);
       
       ws.on('framesent', data => {
-        this.processWebSocketMessage(data.payload);
+        this.processWebSocketData(data.payload, 'sent');
       });
-
+      
       ws.on('framereceived', data => {
-        this.processWebSocketMessage(data.payload);
+        this.processWebSocketData(data.payload, 'received');
       });
     });
   }
 
-  private processWebSocketMessage(payload: string | Buffer) {
+  private processWebSocketData(payload: string | Buffer, direction: string) {
     try {
-      const payloadString = this.convertPayloadToString(payload);
+      let payloadString: string;
       
-      // Фильтруем только нужные сообщения
-      if (this.isOrderPlaceMessage(payloadString)) {
+      if (typeof payload === 'string') {
+        payloadString = payload;
+      } else if (payload instanceof Buffer) {
+        payloadString = payload.toString('utf8');
+      } else {
+        payloadString = String(payload);
+      }
+
+      // Фильтруем только сообщения связанные с ордерами
+      if (payloadString.includes('order_place') || 
+          payloadString.includes('demo@order_place') ||
+          payloadString.includes('"type":"limit"')) {
+        
         const message = JSON.parse(payloadString);
-        this.messages.push(message);
-        console.log('Captured relevant WebSocket message:', {
+        this.messages.push({
+          ...message,
+          direction: direction,
+          timestamp: new Date().toISOString()
+        });
+        
+        console.log(`Captured ${direction} WebSocket message:`, {
           type: message.value?.key,
-          price: message.value?.params?.price
+          price: message.value?.params?.price,
+          side: message.value?.params?.side
         });
       }
     } catch (error) {
@@ -48,49 +59,28 @@ export class WebSocketHelper {
     }
   }
 
-  private convertPayloadToString(payload: string | Buffer): string {
-    if (typeof payload === 'string') {
-      return payload;
-    } else if (payload instanceof Buffer) {
-      return payload.toString('utf8');
-    } else {
-      return String(payload);
-    }
-  }
-
-  private isOrderPlaceMessage(payloadString: string): boolean {
-    return payloadString.includes('order_place') || 
-           payloadString.includes('demo@order_place') ||
-           payloadString.includes('"type":"limit"');
-  }
-
   async waitForOrderPlaceMessage(timeout: number = 15000): Promise<any> {
-    console.log('Waiting for order place WebSocket message...');
+    console.log(`Waiting for order place message (timeout: ${timeout}ms)...`);
     
     const startTime = Date.now();
     
     while (Date.now() - startTime < timeout) {
-      const orderMessage = this.messages.find(msg => {
-        const isOrderPlace = msg.value?.key === 'demo@order_place';
-        const isLimitOrder = msg.value?.params?.type === 'limit';
-        const hasPrice = msg.value?.params?.price;
-        
-        return (isOrderPlace || isLimitOrder) && hasPrice;
-      });
+      const orderMessage = this.messages.find(msg => 
+        msg.value?.key === 'demo@order_place' || 
+        msg.value?.params?.type === 'limit'
+      );
       
       if (orderMessage) {
-        console.log('Order place message found:', {
-          price: orderMessage.value?.params?.price,
-          type: orderMessage.value?.params?.type
-        });
+        console.log('Found order place message:', orderMessage);
         return orderMessage;
       }
       
-      await this.page.waitForTimeout(200);
+      // Используем правильный метод ожидания
+      await new Promise(resolve => setTimeout(resolve, 200));
     }
     
-    console.log('Captured messages:', this.messages);
-    throw new Error(`Order place WebSocket message not found within ${timeout}ms timeout`);
+    console.log('All captured messages:', JSON.stringify(this.messages, null, 2));
+    throw new Error(`Order place WebSocket message not found within ${timeout}ms`);
   }
 
   getCapturedMessages(): any[] {
@@ -99,14 +89,5 @@ export class WebSocketHelper {
 
   clearMessages() {
     this.messages = [];
-    this.isCapturing = false;
-  }
-
-  // Метод для отладки
-  logAllMessages() {
-    console.log('All captured WebSocket messages:');
-    this.messages.forEach((msg, index) => {
-      console.log(`Message ${index + 1}:`, JSON.stringify(msg, null, 2));
-    });
   }
 }

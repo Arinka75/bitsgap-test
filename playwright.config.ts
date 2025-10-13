@@ -1,22 +1,20 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './src/tests',  // Убедитесь что путь правильный
-  fullyParallel: true,
+  testDir: './src/tests',
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
-  reporter: [
-    ['html', { outputFolder: 'reports/html' }],
-    ['json', { outputFolder: 'reports/json' }]
-  ],
+  reporter: 'html',
+  
   use: {
-    baseURL: 'https://app.bitsgap.com',
+    baseURL: 'https://bitsgap.com',
     trace: 'on-first-retry',
-    video: 'on-first-retry',
     screenshot: 'only-on-failure',
-    storageState: '.auth/storageState.json'
+    // storageState будет установлен для каждого проекта отдельно
   },
+
   projects: [
     {
       name: 'setup',
@@ -24,7 +22,18 @@ export default defineConfig({
     },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        storageState: '.auth/storageState.json'
+      },
+      dependencies: ['setup'],
+    },
+    {
+      name: 'firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
+        storageState: '.auth/storageState.json'
+      },
       dependencies: ['setup'],
     },
   ],

@@ -1,127 +1,55 @@
 import { Page, expect } from '@playwright/test';
+import { AUTH_CONSTANTS } from '../utils/constants';
 
 export class LoginPage {
-  readonly page: Page;
+  constructor(private readonly page: Page) {}
 
-  constructor(page: Page) {
-    this.page = page;
+  async navigateToHomepage() {
+    await this.page.goto(AUTH_CONSTANTS.URLS.HOME);
   }
 
-  async switchToDemoMode() {
-    console.log('Switching to Demo mode...');
-    
-    // Вариант 1: Кликаем на аватар профиля (более надежный локатор)
-    try {
-      // Пробуем разные возможные локаторы для аватара профиля
-      const profileSelectors = [
-        '.user-avatar',
-        '[class*="avatar"]',
-        '[class*="user"]',
-        'button[aria-label*="profile" i]',
-        'div[class*="profile"]',
-        'img[alt*="avatar" i]'
-      ];
-
-      let avatarClicked = false;
-      for (const selector of profileSelectors) {
-        const avatar = this.page.locator(selector).first();
-        if (await avatar.isVisible()) {
-          await avatar.click();
-          avatarClicked = true;
-          console.log(`Clicked profile avatar using selector: ${selector}`);
-          break;
-        }
-      }
-
-      if (!avatarClicked) {
-        // Если не нашли аватар, пробуем кликнуть по email или имени пользователя
-        await this.page.click('text=bitsgap_tst@cuvbox.com');
-        console.log('Clicked user email instead of avatar');
-      }
-
-      // Ждем появления выпадающего меню
-      await this.page.waitForTimeout(2000);
-
-      // Ищем и кликаем кнопку/ссылку Demo в выпадающем меню
-      const demoSelectors = [
-        'text=Demo',
-        'button:has-text("Demo")',
-        'a:has-text("Demo")',
-        '[class*="demo"]',
-        'text=Demo Mode'
-      ];
-
-      let demoClicked = false;
-      for (const selector of demoSelectors) {
-        const demoButton = this.page.locator(selector).first();
-        if (await demoButton.isVisible()) {
-          await demoButton.click();
-          demoClicked = true;
-          console.log(`Clicked Demo button using selector: ${selector}`);
-          break;
-        }
-      }
-
-      if (!demoClicked) {
-        throw new Error('Demo button not found in profile menu');
-      }
-
-      // Ждем переключения режима
-      await this.page.waitForTimeout(3000);
-
-      // Проверяем что переключились в demo режим по UI-признаку
-      const demoIndicators = [
-        'text=Demo Mode',
-        '[class*="demo"]',
-        'text=DEMO',
-        '.demo-indicator'
-      ];
-
-      let demoModeActive = false;
-      for (const indicator of demoIndicators) {
-        const demoElement = this.page.locator(indicator).first();
-        if (await demoElement.isVisible()) {
-          demoModeActive = true;
-          console.log(`Demo mode confirmed with indicator: ${indicator}`);
-          break;
-        }
-      }
-
-      if (!demoModeActive) {
-        console.log('No explicit demo indicator found, but continuing...');
-      }
-
-      console.log('Successfully switched to Demo mode');
-
-    } catch (error) {
-      console.error('Error switching to demo mode:', error);
-      throw error;
-    }
-  }
-
-  // Альтернативный метод - если есть прямое переключение без меню
-  async switchToDemoModeAlternative() {
-    console.log('Trying alternative demo mode switch...');
-    
-    // Пробуем найти прямую кнопку переключения Demo/Live
-    const modeSwitchers = [
-      '[class*="switch"]',
-      '[class*="toggle"]',
-      '[class*="demo"]',
-      'button[aria-label*="demo" i]',
-      'button[aria-label*="mode" i]'
-    ];
-
-    for (const selector of modeSwitchers) {
-      const switcher = this.page.locator(selector);
-      if (await switcher.isVisible()) {
-        await switcher.click();
-        console.log(`Clicked mode switcher: ${selector}`);
-        await this.page.waitForTimeout(2000);
-        return;
-      }
+  async navigateToLogin() {
+    const currentUrl = this.page.url();
+    if (currentUrl.includes('/sign-in')) {
+      return;
     }
 
-    throw new Error('Could not find demo mode switcher');
+    const loginLink = this.page.getByRole('link', { name: AUTH_CONSTANTS.TEXT.LOGIN }).first();
+    await expect(loginLink).toBeVisible();
+    
+    await Promise.all([
+      this.page.waitForURL(AUTH_CONSTANTS.URLS.LOGIN_PATTERN),
+      loginLink.click()
+    ]);
   }
+
+  async submitLogin() {
+    const submitButton = this.page.getByRole('button', { name: AUTH_CONSTANTS.TEXT.LOGIN });
+    await expect(submitButton).toBeVisible();
+    
+    await Promise.all([
+      this.page.waitForURL(AUTH_CONSTANTS.URLS.BOTS_PATTERN),
+      submitButton.click()
+    ]);
+  }
+
+  async verifySuccessfulLogin() {
+    await expect(this.page).toHaveURL(AUTH_CONSTANTS.URLS.BOTS_EXACT);
+    const botsSection = this.page.getByText(AUTH_CONSTANTS.TEXT.BOTS).first();
+    await expect(botsSection).toBeVisible();
+  }
+
+async fillEmail(email: string): Promise<void> {
+   await this.page.locator(AUTH_CONSTANTS.SELECTORS.EMAIL).fill(email);
+}
+
+async fillPassword(password: string): Promise<void> {
+    await this.page.locator(AUTH_CONSTANTS.SELECTORS.PASSWORD).fill(password);
+}
+
+async fillCredentials(email: string, password: string): Promise<void> {
+
+  await this.fillEmail(email);
+  await this.fillPassword(password);
+}
 }

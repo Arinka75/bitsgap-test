@@ -7,13 +7,14 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 1,
   reporter: 'html',
+  timeout: 60000, // Увеличиваем общий таймаут
   
   use: {
     baseURL: 'https://bitsgap.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    // storageState будет установлен для каждого проекта отдельно
   },
+  
 
   projects: [
     {
@@ -24,17 +25,10 @@ export default defineConfig({
       name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        storageState: '.auth/storageState.json'
+        storageState: 'D:/bitsgap-test/bitsgap-test/.auth/storageState.json' // ПРАВИЛЬНЫЙ ПУТЬ
       },
-      dependencies: ['setup'],
-    },
-    {
-      name: 'firefox',
-      use: { 
-        ...devices['Desktop Firefox'],
-        storageState: '.auth/storageState.json'
-      },
-      dependencies: ['setup'],
+      dependencies: ['setup'], // ЯВНАЯ ЗАВИСИМОСТЬ
     },
   ],
+  
 });

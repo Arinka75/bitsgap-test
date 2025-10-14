@@ -17,11 +17,14 @@
     "dotenv": "^16.3.0"
   },
     "scripts": {
-    "auth:setup": "npx playwright test src/tests/auth.setup.ts --project=setup",
+    "test:setup": "npx playwright test auth.setup.ts",
     "debug:profile": "npx playwright test src/tests/debug-profile.ts --headed",
     "debug:login": "npx playwright test src/tests/debug.setup.ts --headed",
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
+    "test:all": "npx playwright test",
+    "test:debug": "npx playwright test --debug",
+    "test:trading": "npx playwright test trading.test.ts",
     "report": "npx playwright show-report"
   }
 }

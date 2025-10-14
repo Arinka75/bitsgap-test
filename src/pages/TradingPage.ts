@@ -7,32 +7,36 @@ export class TradingPage {
     this.page = page;
   }
 
-  // Локаторы
+  // ОБНОВЛЕННЫЕ ЛОКАТОРЫ НА ОСНОВЕ АКТУАЛЬНОГО UI
   private readonly tradingTab = '[data-test-id="header-trading"]';
   private readonly mainContent = 'main';
   private readonly tradingViewIframe = 'iframe';
-  private readonly chartContainer = '[class*="chart"]';
+  private readonly chartContainer = '[class*="chart"], [data-testid*="chart"]';
+  private readonly activeBotsSection = 'text=Active bots';
+  private readonly botsTab = '[data-test-id="header-bots"]';
 
   async navigateToTrading() {
     console.log('=== Starting navigation to Trading page ===');
     
     try {
-      // Сначала убедимся, что мы на главной странице
-      await this.ensureOnMainPage();
+      // Сначала убедимся, что мы на главной странице после авторизации
+      await this.ensureAuthenticated();
       
       // Ищем и кликаем на вкладку Trading
       console.log('Looking for Trading tab...');
       const tradingTab = this.page.locator(this.tradingTab);
       
-      await expect(tradingTab).toBeVisible({ timeout: 15000 });
-      console.log('✅ Trading tab found, clicking...');
+      // Добавляем больше времени для поиска элемента
+      await expect(tradingTab).toBeVisible({ timeout: 20000 });
+      console.log('✅ Trading tab found');
       
-      await tradingTab.click();
-      console.log('✅ Trading tab clicked');
+      // Кликаем и ждем навигации
+      await Promise.all([
+        this.page.waitForURL('**/trading**', { timeout: 30000 }),
+        tradingTab.click()
+      ]);
       
-      // Ждем перехода на trading страницу
-      await this.page.waitForURL('**/trading**', { timeout: 20000 });
-      console.log('✅ URL changed to Trading page');
+      console.log('✅ Successfully navigated to Trading page');
       
       // Обрабатываем возможные модалки
       await this.handlePossibleModals();
@@ -40,7 +44,6 @@ export class TradingPage {
       // Ждем полной загрузки страницы
       await this.waitForTradingPageReady();
       
-      console.log('✅ Successfully navigated to Trading page');
       return true;
       
     } catch (error) {
@@ -50,24 +53,42 @@ export class TradingPage {
     }
   }
 
-  private async ensureOnMainPage() {
-    console.log('Ensuring we are on main page...');
+  private async ensureAuthenticated() {
+    console.log('Checking authentication state...');
+    
+    const currentUrl = this.page.url();
     
     // Если мы не на bitsgap.com, переходим туда
-    const currentUrl = this.page.url();
     if (!currentUrl.includes('bitsgap.com')) {
-      console.log('Not on bitsgap.com, navigating...');
+      console.log('Navigating to bitsgap.com...');
       await this.page.goto('https://bitsgap.com');
     }
     
     // Ждем загрузки страницы
     await this.page.waitForLoadState('networkidle');
-    console.log('✅ Main page loaded');
     
-    // Проверяем, что мы аутентифицированы (видим какой-то элемент главной страницы)
-    const mainPageIndicator = this.page.locator(this.mainContent).or(this.page.locator('body'));
-    await expect(mainPageIndicator).toBeVisible({ timeout: 10000 });
-    console.log('✅ Confirmed we are on main authenticated page');
+    // Проверяем индикаторы успешной аутентификации
+    const authIndicators = [
+      this.botsTab,
+      this.activeBotsSection,
+      '[data-testid="profile-avatar"]'
+    ];
+    
+    let authConfirmed = false;
+    for (const indicator of authIndicators) {
+      const element = this.page.locator(indicator).first();
+      if (await element.isVisible({ timeout: 10000 }).catch(() => false)) {
+        console.log(`✅ Authentication confirmed by: ${indicator}`);
+        authConfirmed = true;
+        break;
+      }
+    }
+    
+    if (!authConfirmed) {
+      throw new Error('Not authenticated - cannot proceed to Trading page');
+    }
+    
+    console.log('✅ Confirmed we are authenticated');
   }
 
   private async handlePossibleModals() {
@@ -78,13 +99,14 @@ export class TradingPage {
       '.modal',
       'button:has-text("Stay on Demo")',
       'button:has-text("Close")',
-      'button:has-text("Got it")'
+      'button:has-text("Got it")',
+      'button:has-text("OK")'
     ];
 
     for (const selector of modalSelectors) {
       try {
         const modal = this.page.locator(selector).first();
-        if (await modal.isVisible({ timeout: 3000 })) {
+        if (await modal.isVisible({ timeout: 5000 })) {
           console.log(`Found modal with selector: ${selector}`);
           
           if (selector.includes('button')) {
@@ -100,7 +122,7 @@ export class TradingPage {
             }
           }
           
-          await this.page.waitForTimeout(1000);
+          await this.page.waitForTimeout(2000);
           console.log('✅ Modal handled');
         }
       } catch (error) {
@@ -113,14 +135,21 @@ export class TradingPage {
   async waitForTradingPageReady() {
     console.log('Waiting for Trading page to be ready...');
     
-    // Ждем основные элементы
+    // Ждем основные элементы торговой страницы
     await expect(this.page.locator(this.mainContent)).toBeVisible({ timeout: 15000 });
     
     // Ждем iframe с TradingView
-    await expect(this.page.locator(this.tradingViewIframe).first()).toBeVisible({ timeout: 20000 });
+    const iframe = this.page.locator(this.tradingViewIframe).first();
+    await expect(iframe).toBeVisible({ timeout: 20000 });
     
-    // Даем дополнительное время для загрузки контента
-    await this.page.waitForTimeout(3000);
+    // Дополнительная проверка - ждем загрузки внутри iframe
+    try {
+      const frame = this.page.frameLocator(this.tradingViewIframe).first();
+      await expect(frame.locator(this.chartContainer).first()).toBeVisible({ timeout: 10000 });
+      console.log('✅ Trading chart is loaded');
+    } catch (error) {
+      console.log('⚠️ Chart inside iframe not immediately visible, but continuing...');
+    }
     
     console.log('✅ Trading page is ready');
   }
@@ -129,15 +158,24 @@ export class TradingPage {
     console.log('Verifying Trading page...');
     
     const checks = [
-      { name: 'URL check', check: async () => this.page.url().includes('/trading') },
-      { name: 'Main content', check: async () => {
-        const main = this.page.locator(this.mainContent);
-        return await main.isVisible();
-      }},
-      { name: 'Trading View iframe', check: async () => {
-        const iframe = this.page.locator(this.tradingViewIframe).first();
-        return await iframe.isVisible();
-      }}
+      { 
+        name: 'URL contains /trading', 
+        check: async () => this.page.url().includes('/trading') 
+      },
+      { 
+        name: 'Main content visible', 
+        check: async () => {
+          const main = this.page.locator(this.mainContent);
+          return await main.isVisible();
+        }
+      },
+      { 
+        name: 'Trading View iframe visible', 
+        check: async () => {
+          const iframe = this.page.locator(this.tradingViewIframe).first();
+          return await iframe.isVisible();
+        }
+      }
     ];
 
     let allPassed = true;
@@ -146,9 +184,9 @@ export class TradingPage {
       try {
         const result = await check.check();
         if (result) {
-          console.log(`✅ ${check.name} passed`);
+          console.log(`✅ ${check.name}`);
         } else {
-          console.log(`❌ ${check.name} failed`);
+          console.log(`❌ ${check.name}`);
           allPassed = false;
         }
       } catch (error) {

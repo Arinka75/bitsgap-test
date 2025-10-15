@@ -14,6 +14,9 @@ async ({ page, tradingPage }) => {
 
     await tradingPage.setupDemoMode();
 
+    await tradingPage.verifyDemoModeActive();
+    
+
     const orderDetails = await tradingPage.placeBuyOrderAndVerify();
     
     await tradingPage.takeScreenshot('trading-flow-error');

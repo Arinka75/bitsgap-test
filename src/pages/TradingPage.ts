@@ -228,6 +228,10 @@ export class TradingPage {
     await this.handleDemoModal();
   }
 
+  async verifyDemoModeActive(): Promise<void> {
+  await expect(this.page.getByText('Demo Mode')).toBeVisible();
+}
+
   async setupOrderParameters() {
     await this.selectLimitOrder();
     const price = await this.setRandomPrice();

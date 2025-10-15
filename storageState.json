@@ -2,20 +2,20 @@
   "cookies": [
     {
       "name": "_gcl_au",
-      "value": "1.1.888350725.1760461266",
+      "value": "1.1.2056356320.1760549059",
       "domain": ".bitsgap.com",
       "path": "/",
-      "expires": 1768237266,
+      "expires": 1768325059,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga",
-      "value": "GA1.1.1116847620.1760461266",
+      "value": "GA1.1.880992497.1760549059",
       "domain": ".bitsgap.com",
       "path": "/",
-      "expires": 1795021267.967274,
+      "expires": 1795109061.791155,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -25,7 +25,7 @@
       "value": "1",
       "domain": ".www.google-analytics.com",
       "path": "/",
-      "expires": 1768237268.04037,
+      "expires": 1768325061.912376,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
@@ -51,51 +51,51 @@
       "sameSite": "Lax"
     },
     {
-      "name": "C",
-      "value": "1",
-      "domain": ".adform.net",
-      "path": "/",
-      "expires": 1763139668.697351,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "_iidt",
-      "value": "ANsdzmCaV9tTFzzFArUbwwSKFNnUkuNFIYeTE9iFawgyyYrANp4LMNvatBKASQ1YBttDvAj6i8JD3zZvVGXAN4Z5UiPXPWxRwAW+FezhK8EKdBQRuQ==",
+      "value": "IjA6hYJMfiDhlyX3wzHQCuDNT+zGSq9d8enuS3FoCwGLp0nPQ56pb+tvmGLSo5/eO0rbWbtASvHS2FsL1BLTwxwCu2fjZ6t6drqSzxh8f8HZwGG44A==",
       "domain": ".bitsgap.com",
       "path": "/",
-      "expires": 1791997268.71584,
+      "expires": 1792085061.795334,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
-      "name": "uid",
-      "value": "6411893140109728438",
-      "domain": ".adform.net",
-      "path": "/",
-      "expires": 1765645268.76947,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "_vid_t",
-      "value": "k+jvAA7gFn1yFWUbJdYfhhrSawIDxAshEriTVLG3JV0pNYWfQkbVj2DfWSIOVnX8wF1qO9OvKiujtFfTiLIEu+K3REqxvJMAB2/9e/U5EWCQuR1JcQ==",
+      "value": "9B1a1py7nmTM/6G+t2kUfaslZsXDxozrgx0nn0Awtn4kkM4lctKvZuQgIvd9eRIZfyo7hoiLKrPY1JUb3oOjxDFTpUf9rPsJ7aKH32wnbudKJhHbhQ==",
       "domain": ".bitsgap.com",
       "path": "/",
-      "expires": 1791997268,
+      "expires": 1792085061,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
+      "name": "C",
+      "value": "1",
+      "domain": ".adform.net",
+      "path": "/",
+      "expires": 1763227461.929203,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "uid",
+      "value": "7275132771023866151",
+      "domain": ".adform.net",
+      "path": "/",
+      "expires": 1765733062.001853,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
       "name": "_ga_2SNRKH4684",
-      "value": "GS2.1.s1760461265$o1$g1$t1760461269$j56$l0$h0",
+      "value": "GS2.1.s1760549059$o1$g1$t1760549062$j57$l0$h0",
       "domain": ".bitsgap.com",
       "path": "/",
-      "expires": 1795021269.490238,
+      "expires": 1795109062.654896,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -115,7 +115,7 @@
         },
         {
           "name": "_gcl_ls",
-          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1760461265995},\"expires\":1768237265995}}"
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1760549059361},\"expires\":1768325059361}}"
         },
         {
           "name": "bg.activeBotsTableCurrencyMode",
@@ -135,7 +135,7 @@
         },
         {
           "name": "ZD-suid",
-          "value": "{\"id\":\"5f66548530ea4cafa75fc41c282e3dcd\",\"expiry\":1760462168728,\"tabs\":{\"count\":1,\"expiry\":0}}"
+          "value": "{\"id\":\"cb6aa704f3af42918f29e4a539e03407\",\"expiry\":1760549961676,\"tabs\":{\"count\":1,\"expiry\":0}}"
         },
         {
           "name": "bg.pair",
@@ -147,11 +147,11 @@
         },
         {
           "name": "ZD-buid",
-          "value": "54d661baaeba46398713140d05e64d4f"
+          "value": "61bb007997cb4b2fb3e3c5517a38f00e"
         },
         {
           "name": "bg.refreshToken",
-          "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYzMDUzMjY3LCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI0NGZjNDJjM2I1M2NkODBlZGY3ZDUxODJiMWVhYjkxOSIsImlzcyI6ImJpdHNnYXAtcmVuZXciLCJqdGkiOiJiaXRzZ2FwX3RzdEBjdXZib3guY29tIiwibmVoIjoiNjg0YWJlZDIyZmNjMGU2MjA1ZDk2M2NlNTU1YTdmODIiLCJyZWZlcnJhbCI6ImM3M2NiNzE1Iiwic2loIjoiMWQ4MGMzMTA5ODUyNDE4ZjQxNmQxZDI2YzIwOGM2YmUiLCJzcnYiOlsiYXBwIiwib2xkIiwidmFyIiwic2lyIiwic3RyIiwid3MiLCJoYWkiLCJpbnNpZGVyIiwid3NzIiwiZHdzIiwiYXZ2IiwiYmV0YSIsImRldi13cyIsInJjIiwib25ib2FyZGluZyIsInN0YWdpbmciLCJzdGFnaW5nMiIsInN0YWdpbmczIiwic3RhZ2luZzQiLCJzdGFnaW5nNSIsInN0YWdpbmc2Iiwic3RhZ2luZzciLCJxYSIsInFhMSIsInFhMiIsInR3YSJdLCJ0ZCI6MTM2fQ.jnHmuw5r0smqLdmOZ3AX1BMTwBbR-2JX-LWgwsLNtls\""
+          "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYzMTQxMDYwLCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI3NjE3NDZmNTI0ZWE5OTIxNjRmM2VmZmM4NWJkYTI1MyIsImlzcyI6ImJpdHNnYXAtcmVuZXciLCJqdGkiOiJiaXRzZ2FwX3RzdEBjdXZib3guY29tIiwibmVoIjoiNjg0YWJlZDIyZmNjMGU2MjA1ZDk2M2NlNTU1YTdmODIiLCJyZWZlcnJhbCI6ImM3M2NiNzE1Iiwic2loIjoiOWJmMDMxYmNjMDJkMGM0MzY1NDhlNjY2ZTE2OGM4ZDIiLCJzcnYiOlsiYXBwIiwib2xkIiwidmFyIiwic2lyIiwic3RyIiwid3MiLCJoYWkiLCJpbnNpZGVyIiwid3NzIiwiZHdzIiwiYXZ2IiwiYmV0YSIsImRldi13cyIsInJjIiwib25ib2FyZGluZyIsInN0YWdpbmciLCJzdGFnaW5nMiIsInN0YWdpbmczIiwic3RhZ2luZzQiLCJzdGFnaW5nNSIsInN0YWdpbmc2Iiwic3RhZ2luZzciLCJxYSIsInFhMSIsInFhMiIsInR3YSJdLCJ0ZCI6MTUwfQ.K-zB23D658Tmj3u-rF4LSzQuzbMqckRwBRmBErjkeW0\""
         },
         {
           "name": "bg.discountPromoHidden",
@@ -159,11 +159,11 @@
         },
         {
           "name": "bg.chatToken",
-          "value": "\"eyJhbGciOiJIUzI1NiIsImtpZCI6ImFwcF82NGRlMGJlNGYzOWE3ODQ0MThjNTVjN2MiLCJ0eXAiOiJKV1QifQ.eyJlbWFpbCI6ImJpdHNnYXBfdHN0QGN1dmJveC5jb20iLCJleHAiOjE3NjMwNTMyNjcsImV4dGVybmFsX2lkIjoiYzczY2I3MTUiLCJzY29wZSI6InVzZXIifQ.lZpQNUwDivyCZbAZJhSe_mYkqVMqduZI8B0idE_LuKc\""
+          "value": "\"eyJhbGciOiJIUzI1NiIsImtpZCI6ImFwcF82NGRlMGJlNGYzOWE3ODQ0MThjNTVjN2MiLCJ0eXAiOiJKV1QifQ.eyJlbWFpbCI6ImJpdHNnYXBfdHN0QGN1dmJveC5jb20iLCJleHAiOjE3NjMxNDEwNjAsImV4dGVybmFsX2lkIjoiYzczY2I3MTUiLCJzY29wZSI6InVzZXIifQ.QqvRi8IsgK--MbNafcCGupbw-CVJcK0ksfSXHSeN5c4\""
         },
         {
           "name": "ZnAtYml0c2dhcF90c3RAY3V2Ym94LmNvbQ",
-          "value": "dP4HsqhrhhWzgyGCRu08"
+          "value": "F30IA5NGxgx0ugN7nt9k"
         },
         {
           "name": "tradingview.chartproperties",
@@ -187,7 +187,7 @@
         },
         {
           "name": "64be7476e48e102e065067e1.clientId",
-          "value": "54d661baaeba46398713140d05e64d4f"
+          "value": "61bb007997cb4b2fb3e3c5517a38f00e"
         },
         {
           "name": "bg.trading-view",
@@ -203,7 +203,7 @@
         },
         {
           "name": "_vid_lr",
-          "value": "[[\"3c3UdPcihomM\",\"k5aalSxZWe2oC176syLPyWZ8wJE+iNwpctjFe9eKOnzWkT2ZijF8yINr2IU6bteCbbmZPGTKgmPdkCVmyoEDz4QpPZORY8/CeHHJnWjfhjl81pEphIoxfJv7M5/5YzLO3DrPhCk/k5Fjz/hMO63xM5/EKXLYwTDPkiltmYAMifhoN5LcNKCKJ3yZkWPP0jouk8oXivE5MNife5/Bb3zAkWjanjtqzIJr25A4ac+dG5z+QRu2kXXPzXl8wN0sgcQnfJnBe9fGfjKWn3uAxylkoZE8lYonfJPXe7CEKS2bkWO20ykt2Ilo2ZwnfJ+RY96QOXLYxnvXimMqjsMq14ckOIrdKYDLbzDU3TyZh31t1cloncFyEJ3qa4OHZzGb1zyf931t1IJow5k6cJDAe8GKbizYiTeYxGdy2Ncqz5I6asKfe4nNKWTLhm/Bimgt2Ilo2J4nfJnAKs+SOW/Jn3uOzSlkyIRowYp6LdiJa9qZJ3yJwHvXmzhsh+51z8R4fMCAYNyEKTKfkWPZnT1y2NA4z5JQJdjAe9ecPWvWkTzPkj1tyZ97mIoxfJLHLZ3bMXHVwC2M3GI91NEwmdtsP4qdOoLFJDrJ0GmLhz0UlYUowuU8Kr/BdoTsW23FwmSXmXs3g/0+tJplfNaRPJ+KMTCP3zXBim8t2Ilt254nfJ7We9edOmvWkTqeijFry4Z1z8t4LdiJbNmYJ3yZ1nvXnTNm1pEonooxa8KKdc/beHzAhWre1VZy2MAqz5I4Z86fe57NKWTCi27Bing62Ikiz81zLqXAaN2ZOnzAgmDUhCktz4F715s/btaRKtuKMW/WkSrYkClky4RgwYp4bMqRY9yfPnLYwGrbijFvzYB1z9s+b9iJaNqdJ3yJgWjPkjpq1pEq2pEpZMuGYMGKeGjDkWPcnDpy2MBr3ooxac6fe56aMnzAgm3bhCktwod715k/btaRKtWdKWTLh2nBinhmw5Fj3Jw9ctjAaNqKMWvNn3uekDx8wIJ1z9sybNiJYdiEKS3DgHvXkD5y2MBg2IoxbMufe56RPHzAi23BinhpypFj3Jk/ctjWIZ33eG/KgmnPkjpy2MBr34oxbNaRKt6YKWTKn3uemzh8wIJ1z9s/atiJacGKeGrPkWPdhCktzop715snfImGac+SOnLYwGzaijFu1pEq2JEpZMqfe56eO3zAg3XP2z1v2IlpwYp4aMiRY92EKS3MgHvXmCd8iYVtz5I7ctjAb9iKMW7WkSrbnilkyp97np4zfMCDdc/bPG/YiWnBinhszpFj3YQpLc2Be9eYJ3yJgnvXmCd8iYF715gnfImAe9eYJ3yJh3vXmCd8iYZ715gnfImEe9eYJ3yJinvXmCd8iYJpz5I7ctjAaNyKMW7WkSrcmilky597npk4fMCDdc/bOmrYiWnBinhvz5Fj3YQpLcuFe9eYJ3yJgmDPkjty2MBr2ooxbtaRKt+QKWTKn3uemzl8wIN1z9s4adiJaMGKeGrLkWPdhCktyYp715gnfImHa8+SO3LYwGrVijFu1pEq2ZspZMqfe56cO3zAg3XP2z9o2IlowYp4ZsqRY92EKS3CgnvXmCd8iYtrz5I7ctjAYd6KMW7WkSrVnilkyp97npE6fMCDdc/bMmjYiWnBinhnwpFj3YQpLcOKe9eYJ3yJgWndijFu1pEq35g6fMCCdc/bOW7IkWPdhCktzYd7154nfImEbM+SOWrWkSranilkz4J1z9syatiJa9uQdnLY1CrPkj9rzJ97is0pZMuCYNmEKT2JkWOD3Wcy1pE6iIoxMI/fNcGKbT/YiQKwhCk3m5FjttMpLdiJYNyfJ3yfkWPcmTtn1pEsz5IpNo7HKZ6SJHGJxziZwWhwmNotns9qLtTQNoCXaDfH2SrCmyVvyJ1ry9k2JMvDMJTmbAfI3XvBim4s2Ik3mMRnctjXKs+SMm/Cn3uJzSlkw4JhwYpoLdiJYNyQJ3yZwCrPkjJryp97js0pZMOKYMGKei3YiWDUkSd8icB715k6bsLOBMGKfS3YiQKWin98wIJt2YQpLdiJe5uKdgPWkTiPijEl2N02gtgpZNjSe5CEKT+VkWOLyWctn597gtopZJzSNZ7Ndg==\"]]"
+          "value": "[[\"Tx8NQU8uSH4r\",\"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\"]]"
         },
         {
           "name": "tv.logger.logHighRate",
@@ -211,7 +211,7 @@
         },
         {
           "name": "_vid_t",
-          "value": "k+jvAA7gFn1yFWUbJdYfhhrSawIDxAshEriTVLG3JV0pNYWfQkbVj2DfWSIOVnX8wF1qO9OvKiujtFfTiLIEu+K3REqxvJMAB2/9e/U5EWCQuR1JcQ=="
+          "value": "9B1a1py7nmTM/6G+t2kUfaslZsXDxozrgx0nn0Awtn4kkM4lctKvZuQgIvd9eRIZfyo7hoiLKrPY1JUb3oOjxDFTpUf9rPsJ7aKH32wnbudKJhHbhQ=="
         },
         {
           "name": "bg.market",
@@ -235,7 +235,7 @@
         },
         {
           "name": "bg.accessToken",
-          "value": "\"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYwNDYxODY3LCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI0NGZjNDJjM2I1M2NkODBlZGY3ZDUxODJiMWVhYjkxOSIsImlzcyI6ImJpdHNnYXAtYXV0aCIsImp0aSI6ImJpdHNnYXBfdHN0QGN1dmJveC5jb20iLCJuZWgiOiI2ODRhYmVkMjJmY2MwZTYyMDVkOTYzY2U1NTVhN2Y4MiIsInJlZmVycmFsIjoiYzczY2I3MTUiLCJzaWgiOiIxZDgwYzMxMDk4NTI0MThmNDE2ZDFkMjZjMjA4YzZiZSIsInNydiI6WyJhcHAiLCJvbGQiLCJ2YXIiLCJzaXIiLCJzdHIiLCJ3cyIsImhhaSIsImluc2lkZXIiLCJ3c3MiLCJkd3MiLCJhdnYiLCJiZXRhIiwiZGV2LXdzIiwicmMiLCJvbmJvYXJkaW5nIiwic3RhZ2luZyIsInN0YWdpbmcyIiwic3RhZ2luZzMiLCJzdGFnaW5nNCIsInN0YWdpbmc1Iiwic3RhZ2luZzYiLCJzdGFnaW5nNyIsInFhIiwicWExIiwicWEyIiwidHdhIl0sInRkIjoxMzZ9.caAbrjvSAvNzwqqir5WMQl6QsLeWmyZPagfcl__k8p9Xe0c52bD4McQtGINCgYGshtJFUtynmCgVW9fOsDixtg\""
+          "value": "\"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYwNTQ5NjYwLCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI3NjE3NDZmNTI0ZWE5OTIxNjRmM2VmZmM4NWJkYTI1MyIsImlzcyI6ImJpdHNnYXAtYXV0aCIsImp0aSI6ImJpdHNnYXBfdHN0QGN1dmJveC5jb20iLCJuZWgiOiI2ODRhYmVkMjJmY2MwZTYyMDVkOTYzY2U1NTVhN2Y4MiIsInJlZmVycmFsIjoiYzczY2I3MTUiLCJzaWgiOiI5YmYwMzFiY2MwMmQwYzQzNjU0OGU2NjZlMTY4YzhkMiIsInNydiI6WyJhcHAiLCJvbGQiLCJ2YXIiLCJzaXIiLCJzdHIiLCJ3cyIsImhhaSIsImluc2lkZXIiLCJ3c3MiLCJkd3MiLCJhdnYiLCJiZXRhIiwiZGV2LXdzIiwicmMiLCJvbmJvYXJkaW5nIiwic3RhZ2luZyIsInN0YWdpbmcyIiwic3RhZ2luZzMiLCJzdGFnaW5nNCIsInN0YWdpbmc1Iiwic3RhZ2luZzYiLCJzdGFnaW5nNyIsInFhIiwicWExIiwicWEyIiwidHdhIl0sInRkIjoxNTB9.3B38WcHMKHPRkGsvZsKCdSWA6cT_key2hazrLM8Y_i4vE7cWV96rjCcnPSrKcDJ54vuRb_MmCvBoSQ3UvMXTJQ\""
         },
         {
           "name": "bg.botsTabsFilter",
@@ -243,7 +243,7 @@
         },
         {
           "name": "tradingview.chartproperties.mainSeriesProperties",
-          "value": "{\"style\":1,\"esdShowDividends\":true,\"esdShowSplits\":true,\"esdShowEarnings\":true,\"esdShowBreaks\":false,\"esdFlagSize\":2,\"showContinuousContractSwitches\":true,\"showContinuousContractSwitchesBreaks\":false,\"showFuturesContractExpiration\":true,\"showLastNews\":true,\"showCountdown\":false,\"bidAsk\":{\"visible\":false,\"lineStyle\":1,\"lineWidth\":1,\"bidLineColor\":\"#2962FF\",\"askLineColor\":\"#F7525F\"},\"prePostMarket\":{\"visible\":true,\"lineStyle\":1,\"lineWidth\":1,\"preMarketColor\":\"#FB8C00\",\"postMarketColor\":\"#2962FF\"},\"highLowAvgPrice\":{\"highLowPriceLinesVisible\":false,\"highLowPriceLabelsVisible\":false,\"averageClosePriceLineVisible\":false,\"averageClosePriceLabelVisible\":false,\"highLowPriceLinesColor\":\"\",\"highLowPriceLinesWidth\":1,\"averagePriceLineColor\":\"\",\"averagePriceLineWidth\":1},\"showPriceLine\":true,\"priceLineWidth\":1,\"priceLineColor\":\"\",\"baseLineColor\":\"#B2B5BE\",\"showPrevClosePriceLine\":false,\"prevClosePriceLineWidth\":1,\"prevClosePriceLineColor\":\"#555555\",\"minTick\":\"default\",\"dividendsAdjustment\":{},\"backAdjustment\":false,\"settlementAsClose\":true,\"sessionId\":\"regular\",\"sessVis\":false,\"statusViewStyle\":{\"fontSize\":16,\"showExchange\":true,\"showInterval\":true,\"symbolTextSource\":\"description\"},\"candleStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"volCandlesStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"hollowCandleStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"drawBody\":true},\"haStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"rgba(115, 115, 117, 1)\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"showRealLastPrice\":false,\"barColorsOnPrevClose\":false,\"inputs\":{},\"inputInfo\":{},\"drawBody\":true},\"barStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"dontDrawOpen\":false,\"thinBars\":true},\"hiloStyle\":{\"color\":\"#2962FF\",\"showBorders\":true,\"borderColor\":\"#2962FF\",\"showLabels\":true,\"labelColor\":\"#2962FF\",\"drawBody\":true},\"columnStyle\":{\"upColor\":\"rgba(8, 153, 129, 0.5)\",\"downColor\":\"rgba(242, 54, 69, 0.5)\",\"barColorsOnPrevClose\":true,\"priceSource\":\"close\"},\"lineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":3,\"priceSource\":\"close\"},\"tpoStyle\":{},\"svpStyle\":{},\"lineWithMarkersStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"steplineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"areaStyle\":{\"color1\":\"rgba(41, 98, 255, 0.28)\",\"color2\":\"#2962FF\",\"linecolor\":\"#2962FF\",\"linestyle\":0,\"linewidth\":1,\"priceSource\":\"close\",\"transparency\":100},\"hlcAreaStyle\":{\"highLineColor\":\"#089981\",\"highLineStyle\":0,\"highLineWidth\":2,\"lowLineColor\":\"#F23645\",\"lowLineStyle\":0,\"lowLineWidth\":2,\"closeLineColor\":\"#868993\",\"closeLineStyle\":0,\"closeLineWidth\":2,\"highCloseFillColor\":\"rgba(8, 153, 129, 0.2)\",\"closeLowFillColor\":\"rgba(242, 54, 69, 0.2)\"},\"renkoStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"inputs\":{\"source\":\"close\",\"sources\":\"Close\",\"boxSize\":3,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"wicks\":true},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"wicks\":{\"name\":\"Wicks\"}}},\"pbStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"lb\":3},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"lb\":{\"name\":\"Number of line\"}}},\"kagiStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"reversalAmount\":1},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"reversalAmount\":{\"name\":\"Reversal amount\"}}},\"pnfStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"sources\":\"Close\",\"reversalAmount\":3,\"boxSize\":1,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"oneStepBackBuilding\":false},\"inputInfo\":{\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"reversalAmount\":{\"name\":\"Reversal amount\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"oneStepBackBuilding\":{\"name\":\"One step back building\"}}},\"baselineStyle\":{\"baselineColor\":\"#758696\",\"topFillColor1\":\"rgba(8, 153, 129, 0.28)\",\"topFillColor2\":\"rgba(8, 153, 129, 0.05)\",\"bottomFillColor1\":\"rgba(242, 54, 69, 0.05)\",\"bottomFillColor2\":\"rgba(242, 54, 69, 0.28)\",\"topLineColor\":\"#089981\",\"bottomLineColor\":\"#F23645\",\"topLineWidth\":3,\"bottomLineWidth\":3,\"priceSource\":\"close\",\"transparency\":50,\"baseLevelPercentage\":50},\"rangeStyle\":{\"barStyle\":0,\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"thinBars\":true,\"candlesUpColor\":\"#089981\",\"candlesDownColor\":\"#F23645\",\"candlesBorderUpColor\":\"#089981\",\"candlesBorderDownColor\":\"#F23645\",\"candlesWickUpColor\":\"#089981\",\"candlesWickDownColor\":\"#F23645\",\"inputs\":{\"range\":10,\"phantomBars\":false},\"inputInfo\":{\"range\":{\"name\":\"Range\"},\"phantomBars\":{\"name\":\"Phantom bars\"}}},\"volFootprintStyle\":{},\"symbol\":\"BINANCE:BTC_USDT\",\"shortName\":\"binance:BTC_USDT\",\"timeframe\":\"\",\"onWidget\":false,\"interval\":\"60\",\"unitId\":null,\"priceAxisProperties\":{\"autoScale\":true,\"alignLabels\":true}}"
+          "value": "{\"style\":1,\"esdShowDividends\":true,\"esdShowSplits\":true,\"esdShowEarnings\":true,\"esdShowBreaks\":false,\"esdFlagSize\":2,\"showContinuousContractSwitches\":true,\"showContinuousContractSwitchesBreaks\":false,\"showFuturesContractExpiration\":true,\"showLastNews\":true,\"showCountdown\":false,\"bidAsk\":{\"visible\":false,\"lineStyle\":1,\"lineWidth\":1,\"bidLineColor\":\"#2962FF\",\"askLineColor\":\"#F7525F\"},\"prePostMarket\":{\"visible\":true,\"lineStyle\":1,\"lineWidth\":1,\"preMarketColor\":\"#FB8C00\",\"postMarketColor\":\"#2962FF\"},\"highLowAvgPrice\":{\"highLowPriceLinesVisible\":false,\"highLowPriceLabelsVisible\":false,\"averageClosePriceLineVisible\":false,\"averageClosePriceLabelVisible\":false,\"highLowPriceLinesColor\":\"\",\"highLowPriceLinesWidth\":1,\"averagePriceLineColor\":\"\",\"averagePriceLineWidth\":1},\"showPriceLine\":true,\"priceLineWidth\":1,\"priceLineColor\":\"\",\"baseLineColor\":\"#B2B5BE\",\"showPrevClosePriceLine\":false,\"prevClosePriceLineWidth\":1,\"prevClosePriceLineColor\":\"#555555\",\"minTick\":\"default\",\"dividendsAdjustment\":{},\"backAdjustment\":false,\"settlementAsClose\":true,\"sessionId\":\"regular\",\"sessVis\":false,\"statusViewStyle\":{\"fontSize\":16,\"showExchange\":true,\"showInterval\":true,\"symbolTextSource\":\"description\"},\"candleStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"volCandlesStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"drawBody\":true},\"hollowCandleStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"#737375\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"drawBody\":true},\"haStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"drawWick\":true,\"drawBorder\":true,\"borderColor\":\"#378658\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"wickColor\":\"rgba(115, 115, 117, 1)\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"showRealLastPrice\":false,\"barColorsOnPrevClose\":false,\"inputs\":{},\"inputInfo\":{},\"drawBody\":true},\"barStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"barColorsOnPrevClose\":false,\"dontDrawOpen\":false,\"thinBars\":true},\"hiloStyle\":{\"color\":\"#2962FF\",\"showBorders\":true,\"borderColor\":\"#2962FF\",\"showLabels\":true,\"labelColor\":\"#2962FF\",\"drawBody\":true},\"columnStyle\":{\"upColor\":\"rgba(8, 153, 129, 0.5)\",\"downColor\":\"rgba(242, 54, 69, 0.5)\",\"barColorsOnPrevClose\":true,\"priceSource\":\"close\"},\"lineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":3,\"priceSource\":\"close\"},\"tpoStyle\":{},\"svpStyle\":{},\"lineWithMarkersStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"steplineStyle\":{\"color\":\"#2962FF\",\"linestyle\":0,\"linewidth\":2,\"priceSource\":\"close\"},\"areaStyle\":{\"color1\":\"rgba(41, 98, 255, 0.28)\",\"color2\":\"#2962FF\",\"linecolor\":\"#2962FF\",\"linestyle\":0,\"linewidth\":1,\"priceSource\":\"close\",\"transparency\":100},\"hlcAreaStyle\":{\"highLineColor\":\"#089981\",\"highLineStyle\":0,\"highLineWidth\":2,\"lowLineColor\":\"#F23645\",\"lowLineStyle\":0,\"lowLineWidth\":2,\"closeLineColor\":\"#868993\",\"closeLineStyle\":0,\"closeLineWidth\":2,\"highCloseFillColor\":\"rgba(8, 153, 129, 0.2)\",\"closeLowFillColor\":\"rgba(242, 54, 69, 0.2)\"},\"renkoStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"wickUpColor\":\"#089981\",\"wickDownColor\":\"#F23645\",\"inputs\":{\"source\":\"close\",\"sources\":\"Close\",\"boxSize\":3,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"wicks\":true},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"wicks\":{\"name\":\"Wicks\"}}},\"pbStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"borderUpColor\":\"#089981\",\"borderDownColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"borderUpColorProjection\":\"#a9dcc3\",\"borderDownColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"lb\":3},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"lb\":{\"name\":\"Number of line\"}}},\"kagiStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"source\":\"close\",\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"reversalAmount\":1},\"inputInfo\":{\"source\":{\"name\":\"Source\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"reversalAmount\":{\"name\":\"Reversal amount\"}}},\"pnfStyle\":{\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"inputs\":{\"sources\":\"Close\",\"reversalAmount\":3,\"boxSize\":1,\"style\":\"ATR\",\"atrLength\":14,\"percentageLTP\":1,\"oneStepBackBuilding\":false},\"inputInfo\":{\"sources\":{\"name\":\"Source\"},\"boxSize\":{\"name\":\"Box size\"},\"reversalAmount\":{\"name\":\"Reversal amount\"},\"style\":{\"name\":\"Style\"},\"atrLength\":{\"name\":\"ATR length\"},\"percentageLTP\":{\"name\":\"Percentage\"},\"oneStepBackBuilding\":{\"name\":\"One step back building\"}}},\"baselineStyle\":{\"baselineColor\":\"#758696\",\"topFillColor1\":\"rgba(8, 153, 129, 0.28)\",\"topFillColor2\":\"rgba(8, 153, 129, 0.05)\",\"bottomFillColor1\":\"rgba(242, 54, 69, 0.05)\",\"bottomFillColor2\":\"rgba(242, 54, 69, 0.28)\",\"topLineColor\":\"#089981\",\"bottomLineColor\":\"#F23645\",\"topLineWidth\":3,\"bottomLineWidth\":3,\"priceSource\":\"close\",\"transparency\":50,\"baseLevelPercentage\":50},\"rangeStyle\":{\"barStyle\":0,\"upColor\":\"#089981\",\"downColor\":\"#F23645\",\"upColorProjection\":\"#a9dcc3\",\"downColorProjection\":\"#f5a6ae\",\"thinBars\":true,\"candlesUpColor\":\"#089981\",\"candlesDownColor\":\"#F23645\",\"candlesBorderUpColor\":\"#089981\",\"candlesBorderDownColor\":\"#F23645\",\"candlesWickUpColor\":\"#089981\",\"candlesWickDownColor\":\"#F23645\",\"inputs\":{\"range\":10,\"phantomBars\":false},\"inputInfo\":{\"range\":{\"name\":\"Range\"},\"phantomBars\":{\"name\":\"Phantom bars\"}}},\"volFootprintStyle\":{},\"symbol\":\"binance:BTC_USDT\",\"shortName\":\"\",\"timeframe\":\"\",\"onWidget\":false,\"interval\":\"60\",\"unitId\":null,\"priceAxisProperties\":{\"autoScale\":true,\"alignLabels\":true}}"
         },
         {
           "name": "staged_notifications",
@@ -255,20 +255,16 @@
       "origin": "https://bitsgap.com",
       "localStorage": [
         {
-          "name": "ZD-suid",
-          "value": "{\"id\":\"bfe0cdfc17374d7c84fefc67326cb5aa\",\"expiry\":1760462167675,\"tabs\":{\"count\":0,\"expiry\":1760461297696}}"
-        },
-        {
-          "name": "_gcl_ls",
-          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1760461267051},\"expires\":1768237267051}}"
-        },
-        {
           "name": "renewToken",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYzMDUzMjY3LCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI0NGZjNDJjM2I1M2NkODBlZGY3ZDUxODJiMWVhYjkxOSIsImlzcyI6ImJpdHNnYXAtcmVuZXciLCJqdGkiOiJiaXRzZ2FwX3RzdEBjdXZib3guY29tIiwibmVoIjoiNjg0YWJlZDIyZmNjMGU2MjA1ZDk2M2NlNTU1YTdmODIiLCJyZWZlcnJhbCI6ImM3M2NiNzE1Iiwic2loIjoiMWQ4MGMzMTA5ODUyNDE4ZjQxNmQxZDI2YzIwOGM2YmUiLCJzcnYiOlsiYXBwIiwib2xkIiwidmFyIiwic2lyIiwic3RyIiwid3MiLCJoYWkiLCJpbnNpZGVyIiwid3NzIiwiZHdzIiwiYXZ2IiwiYmV0YSIsImRldi13cyIsInJjIiwib25ib2FyZGluZyIsInN0YWdpbmciLCJzdGFnaW5nMiIsInN0YWdpbmczIiwic3RhZ2luZzQiLCJzdGFnaW5nNSIsInN0YWdpbmc2Iiwic3RhZ2luZzciLCJxYSIsInFhMSIsInFhMiIsInR3YSJdLCJ0ZCI6MTM2fQ.jnHmuw5r0smqLdmOZ3AX1BMTwBbR-2JX-LWgwsLNtls"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiUnVzc2lhIiwiZXhwIjoxNzYzMTQxMDYwLCJoYXMiOiI1ZDFjZWY3NWZmIiwiaWhoIjoiMzU4Y2JjNDY3YjI2OTRkOGM3MmFmN2I5NjY1ODg4ZTgiLCJpaWQiOiI2ODY3MmYwZTJjOTgwMGZmOTJlNDg2Yzc0MTNmNDkxMGFiZTgxMDczMzY5N2QxMGNjMzI1NTQwYmNlZjE0ZDkxIiwiaXNfZXUiOmZhbHNlLCJpc2giOiI3NjE3NDZmNTI0ZWE5OTIxNjRmM2VmZmM4NWJkYTI1MyIsImlzcyI6ImJpdHNnYXAtcmVuZXciLCJqdGkiOiJiaXRzZ2FwX3RzdEBjdXZib3guY29tIiwibmVoIjoiNjg0YWJlZDIyZmNjMGU2MjA1ZDk2M2NlNTU1YTdmODIiLCJyZWZlcnJhbCI6ImM3M2NiNzE1Iiwic2loIjoiOWJmMDMxYmNjMDJkMGM0MzY1NDhlNjY2ZTE2OGM4ZDIiLCJzcnYiOlsiYXBwIiwib2xkIiwidmFyIiwic2lyIiwic3RyIiwid3MiLCJoYWkiLCJpbnNpZGVyIiwid3NzIiwiZHdzIiwiYXZ2IiwiYmV0YSIsImRldi13cyIsInJjIiwib25ib2FyZGluZyIsInN0YWdpbmciLCJzdGFnaW5nMiIsInN0YWdpbmczIiwic3RhZ2luZzQiLCJzdGFnaW5nNSIsInN0YWdpbmc2Iiwic3RhZ2luZzciLCJxYSIsInFhMSIsInFhMiIsInR3YSJdLCJ0ZCI6MTUwfQ.K-zB23D658Tmj3u-rF4LSzQuzbMqckRwBRmBErjkeW0"
         },
         {
           "name": "lastEmail",
           "value": "bitsgap_tst@cuvbox.com"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1760549060301},\"expires\":1768325060301}}"
         }
       ]
     }

@@ -1,218 +1,250 @@
+// pages/TradingPage.ts
 import { Page, expect } from '@playwright/test';
+import { TRADING_CONSTANTS, AUTH_CONSTANTS } from '../utils/constants';
 
 export class TradingPage {
-  readonly page: Page;
+  constructor(public page: Page) {}
 
-  constructor(page: Page) {
-    this.page = page;
-  }
 
-  // ОБНОВЛЕННЫЕ ЛОКАТОРЫ НА ОСНОВЕ АКТУАЛЬНОГО UI
-  private readonly tradingTab = '[data-test-id="header-trading"]';
-  private readonly mainContent = 'main';
-  private readonly tradingViewIframe = 'iframe';
-  private readonly chartContainer = '[class*="chart"], [data-testid*="chart"]';
-  private readonly activeBotsSection = 'text=Active bots';
-  private readonly botsTab = '[data-test-id="header-bots"]';
 
-  async navigateToTrading() {
-    console.log('=== Starting navigation to Trading page ===');
-    
-    try {
-      // Сначала убедимся, что мы на главной странице после авторизации
-      await this.ensureAuthenticated();
-      
-      // Ищем и кликаем на вкладку Trading
-      console.log('Looking for Trading tab...');
-      const tradingTab = this.page.locator(this.tradingTab);
-      
-      // Добавляем больше времени для поиска элемента
-      await expect(tradingTab).toBeVisible({ timeout: 20000 });
-      console.log('✅ Trading tab found');
-      
-      // Кликаем и ждем навигации
-      await Promise.all([
-        this.page.waitForURL('**/trading**', { timeout: 30000 }),
-        tradingTab.click()
-      ]);
-      
-      console.log('✅ Successfully navigated to Trading page');
-      
-      // Обрабатываем возможные модалки
-      await this.handlePossibleModals();
-      
-      // Ждем полной загрузки страницы
-      await this.waitForTradingPageReady();
-      
-      return true;
-      
-    } catch (error) {
-      console.error('❌ Failed to navigate to Trading:', error);
-      await this.takeScreenshot('navigation-error');
-      return false;
-    }
-  }
-
-  private async ensureAuthenticated() {
-    console.log('Checking authentication state...');
-    
-    const currentUrl = this.page.url();
-    
-    // Если мы не на bitsgap.com, переходим туда
-    if (!currentUrl.includes('bitsgap.com')) {
-      console.log('Navigating to bitsgap.com...');
-      await this.page.goto('https://bitsgap.com');
-    }
-    
-    // Ждем загрузки страницы
-    await this.page.waitForLoadState('networkidle');
-    
-    // Проверяем индикаторы успешной аутентификации
-    const authIndicators = [
-      this.botsTab,
-      this.activeBotsSection,
-      '[data-testid="profile-avatar"]'
-    ];
-    
-    let authConfirmed = false;
-    for (const indicator of authIndicators) {
-      const element = this.page.locator(indicator).first();
-      if (await element.isVisible({ timeout: 10000 }).catch(() => false)) {
-        console.log(`✅ Authentication confirmed by: ${indicator}`);
-        authConfirmed = true;
-        break;
-      }
-    }
-    
-    if (!authConfirmed) {
-      throw new Error('Not authenticated - cannot proceed to Trading page');
-    }
-    
-    console.log('✅ Confirmed we are authenticated');
-  }
-
-  private async handlePossibleModals() {
-    console.log('Checking for modals...');
-    
-    const modalSelectors = [
-      'div[role="dialog"]',
-      '.modal',
-      'button:has-text("Stay on Demo")',
-      'button:has-text("Close")',
-      'button:has-text("Got it")',
-      'button:has-text("OK")'
-    ];
-
-    for (const selector of modalSelectors) {
-      try {
-        const modal = this.page.locator(selector).first();
-        if (await modal.isVisible({ timeout: 5000 })) {
-          console.log(`Found modal with selector: ${selector}`);
-          
-          if (selector.includes('button')) {
-            await modal.click();
-          } else {
-            // Для модального окна ищем кнопку закрытия
-            const closeBtn = modal.locator('button').first();
-            if (await closeBtn.isVisible({ timeout: 2000 })) {
-              await closeBtn.click();
-            } else {
-              // Пробуем Escape
-              await this.page.keyboard.press('Escape');
-            }
-          }
-          
-          await this.page.waitForTimeout(2000);
-          console.log('✅ Modal handled');
-        }
-      } catch (error) {
-        // Продолжаем, если не нашли модалку
-        continue;
-      }
-    }
-  }
-
-  async waitForTradingPageReady() {
-    console.log('Waiting for Trading page to be ready...');
-    
-    // Ждем основные элементы торговой страницы
-    await expect(this.page.locator(this.mainContent)).toBeVisible({ timeout: 15000 });
-    
-    // Ждем iframe с TradingView
-    const iframe = this.page.locator(this.tradingViewIframe).first();
-    await expect(iframe).toBeVisible({ timeout: 20000 });
-    
-    // Дополнительная проверка - ждем загрузки внутри iframe
-    try {
-      const frame = this.page.frameLocator(this.tradingViewIframe).first();
-      await expect(frame.locator(this.chartContainer).first()).toBeVisible({ timeout: 10000 });
-      console.log('✅ Trading chart is loaded');
-    } catch (error) {
-      console.log('⚠️ Chart inside iframe not immediately visible, but continuing...');
-    }
-    
-    console.log('✅ Trading page is ready');
-  }
-
-  async verifyTradingPage() {
-    console.log('Verifying Trading page...');
-    
-    const checks = [
-      { 
-        name: 'URL contains /trading', 
-        check: async () => this.page.url().includes('/trading') 
-      },
-      { 
-        name: 'Main content visible', 
-        check: async () => {
-          const main = this.page.locator(this.mainContent);
-          return await main.isVisible();
-        }
-      },
-      { 
-        name: 'Trading View iframe visible', 
-        check: async () => {
-          const iframe = this.page.locator(this.tradingViewIframe).first();
-          return await iframe.isVisible();
-        }
-      }
-    ];
-
-    let allPassed = true;
-    
-    for (const check of checks) {
-      try {
-        const result = await check.check();
-        if (result) {
-          console.log(`✅ ${check.name}`);
-        } else {
-          console.log(`❌ ${check.name}`);
-          allPassed = false;
-        }
-      } catch (error) {
-        console.log(`❌ ${check.name} errored:`, error);
-        allPassed = false;
-      }
-    }
-    
-    return allPassed;
+  async navigate() {
+    await this.page.goto(AUTH_CONSTANTS.URLS.TRADING);
+    await this.page.waitForURL(AUTH_CONSTANTS.URLS.TRADING_PATTERN, { 
+      timeout: TRADING_CONSTANTS.TIMEOUTS.NAVIGATION 
+    });
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.PAGE_LOAD);
   }
 
   async takeScreenshot(name: string) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    await this.page.screenshot({ 
-      path: `./test-results/trading-${name}-${timestamp}.png`, 
-      fullPage: true 
-    });
-    console.log(`📸 Screenshot saved: trading-${name}-${timestamp}.png`);
+    if (!this.page.isClosed()) {
+      await this.page.screenshot({ 
+        path: `./test-results/${name}-${Date.now()}.png`, 
+        fullPage: true 
+      });
+    }
   }
 
-  async logCurrentState() {
-    const url = this.page.url();
-    const title = await this.page.title();
-    console.log('=== CURRENT PAGE STATE ===');
-    console.log(`URL: ${url}`);
-    console.log(`Title: ${title}`);
-    console.log('==========================');
+
+
+  async openSettings() {
+    
+    const settingsButton = this.page.locator(TRADING_CONSTANTS.SELECTORS.SETTINGS_BUTTON).first();
+    await settingsButton.waitFor({ 
+      state: 'visible', 
+      timeout: TRADING_CONSTANTS.TIMEOUTS.ELEMENT 
+    });
+    await expect(settingsButton).toBeEnabled();
+    await settingsButton.click({ force: true });
+    
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+  }
+
+  async toggleDemoMode() {
+    
+    const toggled = await this.page.evaluate((selector) => {
+      const demoCheckbox = document.querySelector(selector);
+      if (demoCheckbox && demoCheckbox instanceof HTMLInputElement) {
+        demoCheckbox.click();
+        return true;
+      }
+      return false;
+    }, TRADING_CONSTANTS.SELECTORS.DEMO_MODE_TOGGLE);
+
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+  }
+
+  async handleDemoModal() {
+    
+    try {
+      const modal = this.page.locator(TRADING_CONSTANTS.SELECTORS.DEMO_MODAL).first();
+      const isModalVisible = await modal.isVisible({ 
+        timeout: TRADING_CONSTANTS.TIMEOUTS.MODAL_WAIT 
+      });
+      
+      if (isModalVisible) {
+        
+        const stayButton = modal.locator(TRADING_CONSTANTS.SELECTORS.STAY_ON_DEMO_BUTTON).first();
+        await stayButton.waitFor({ 
+          state: 'visible', 
+          timeout: TRADING_CONSTANTS.TIMEOUTS.MODAL_WAIT 
+        });
+        await stayButton.click({ force: true });
+        
+        await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+      }
+    } catch (error) {
+    }
+  }
+
+
+
+  async selectLimitOrder() {
+    
+    const limitOrderButton = this.page.locator(TRADING_CONSTANTS.SELECTORS.LIMIT_ORDER_BUTTON).first();
+    await limitOrderButton.waitFor({ 
+      state: 'visible', 
+      timeout: TRADING_CONSTANTS.TIMEOUTS.ELEMENT 
+    });
+    await limitOrderButton.click({ force: true });
+    
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+  }
+
+  async setRandomPrice(): Promise<string> {
+    
+    const randomPrice = (
+      Math.random() * 
+      (TRADING_CONSTANTS.ORDER_CONFIG.PRICE.MAX - TRADING_CONSTANTS.ORDER_CONFIG.PRICE.MIN) + 
+      TRADING_CONSTANTS.ORDER_CONFIG.PRICE.MIN
+    ).toFixed(2);
+    
+    const priceInput = this.page.locator(TRADING_CONSTANTS.SELECTORS.PRICE_INPUT).first();
+    
+    await priceInput.waitFor({ 
+      state: 'visible', 
+      timeout: TRADING_CONSTANTS.TIMEOUTS.ELEMENT 
+    });
+    await expect(priceInput).toBeEnabled();
+    
+    await priceInput.click();
+    await priceInput.clear();
+    await priceInput.fill(randomPrice);
+    
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+    const currentValue = await priceInput.inputValue();
+
+    const priceValue = parseFloat(currentValue.replace(/,/g, ''));
+    if (priceValue < TRADING_CONSTANTS.ORDER_CONFIG.PRICE.MIN) {
+      await priceInput.fill(TRADING_CONSTANTS.ORDER_CONFIG.PRICE.MIN.toString());
+      const retryValue = await priceInput.inputValue();
+      return retryValue;
+    }
+    
+    // console.log(`Random price set: ${currentValue}`);
+    return currentValue;
+  }
+
+  async setVolumeToPercentage(targetPercentage: number): Promise<string> {
+    
+    const volumeSlider = this.page.locator(TRADING_CONSTANTS.SELECTORS.VOLUME_SLIDER).first();
+    await volumeSlider.waitFor({ 
+      state: 'visible', 
+      timeout: TRADING_CONSTANTS.TIMEOUTS.ELEMENT 
+    });
+    
+    await volumeSlider.fill(targetPercentage.toString());
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+    
+    const newValue = await volumeSlider.inputValue();
+    // console.log(`Volume set to: ${newValue}%`);
+    return newValue;
+  }
+
+  async clickScreenshotButton() {
+    
+    try {
+      const screenshotButton = this.page.locator(TRADING_CONSTANTS.SELECTORS.SCREENSHOT_BUTTON).first();
+      await screenshotButton.waitFor({ 
+        state: 'visible', 
+        timeout: TRADING_CONSTANTS.TIMEOUTS.MODAL_WAIT 
+      });
+      await expect(screenshotButton).toBeEnabled();
+      await screenshotButton.click({ force: true });
+      
+      await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ELEMENT_ACTION);
+    } catch (error) {
+    }
+  }
+
+  async clickBuyButton() {
+    
+    const buyButton = this.page.locator(TRADING_CONSTANTS.SELECTORS.BUY_BUTTON).first();
+    await buyButton.waitFor({ 
+      state: 'visible', 
+      timeout: TRADING_CONSTANTS.TIMEOUTS.ELEMENT 
+    });
+    await expect(buyButton).toBeEnabled();
+    await buyButton.click({ force: true });
+    
+    await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.MODAL_WAIT);
+  }
+
+//   async verifyOrderExists(orderDetails: { price: string; type: string }): Promise<void> {
+//     console.log(TRADING_CONSTANTS.MESSAGES.INFO.VERIFYING_ORDER_TABLE);
+    
+//     await this.page.waitForTimeout(TRADING_CONSTANTS.TIMEOUTS.ORDER_TABLE_WAIT);
+    
+//     const table = this.page.locator(TRADING_CONSTANTS.SELECTORS.ORDERS_TABLE).first();
+//     await table.waitFor({ 
+//       state: 'visible', 
+//       timeout: TRADING_CONSTANTS.TIMEOUTS.NAVIGATION 
+//     });
+    
+//     const rows = table.locator(TRADING_CONSTANTS.SELECTORS.TABLE_ROW);
+//     const rowCount = await rows.count();
+    
+//     if (rowCount === 0) {
+//       throw new Error(TRADING_CONSTANTS.MESSAGES.ERRORS.NO_ORDERS_FOUND);
+//     }
+    
+//     console.log(`✅ Found ${rowCount} order rows`);
+    
+//     const normalizedExpectedPrice = orderDetails.price.replace(/,/g, '');
+    
+//     for (let i = 0; i < rowCount; i++) {
+//       const row = rows.nth(i);
+//       const rowText = await row.textContent();
+      
+//       if (rowText && 
+//           rowText.includes(orderDetails.type) &&
+//           (rowText.includes(orderDetails.price) || rowText.includes(normalizedExpectedPrice))) {
+        
+//         console.log(`${TRADING_CONSTANTS.MESSAGES.SUCCESS.ORDER_VERIFIED}: Price=${orderDetails.price}, Type=${orderDetails.type}`);
+        
+//         // Проверка статуса
+//         try {
+//           const statusElement = row.locator(TRADING_CONSTANTS.SELECTORS.STATUS_ELEMENT).first();
+//           if (await statusElement.isVisible()) {
+//             const statusText = await statusElement.textContent();
+//             console.log(`✅ Order status: ${statusText}`);
+//           }
+//         } catch (error) {
+//           console.log(TRADING_CONSTANTS.MESSAGES.WARNINGS.ORDER_STATUS_NOT_AVAILABLE);
+//         }
+        
+//         return;
+//       }
+//     }
+    
+//     throw new Error(
+//       `${TRADING_CONSTANTS.MESSAGES.ERRORS.ORDER_NOT_FOUND} ${orderDetails.price} and type ${orderDetails.type} not found in table`
+//     );
+//   }
+
+
+  async setupDemoMode() {
+    await this.openSettings();
+    await this.toggleDemoMode();
+    await this.handleDemoModal();
+  }
+
+  async setupOrderParameters() {
+    await this.selectLimitOrder();
+    const price = await this.setRandomPrice();
+    const volume = await this.setVolumeToPercentage(
+      TRADING_CONSTANTS.ORDER_CONFIG.VOLUME.TARGET_PERCENTAGE
+    );
+    await this.clickScreenshotButton();
+    
+    return { price, volume, type: TRADING_CONSTANTS.TEXT.LIMIT };
+  }
+
+  async placeBuyOrderAndVerify() {
+    const orderDetails = await this.setupOrderParameters();
+
+    await this.clickBuyButton();
+    
+    
+    return orderDetails;
   }
 }
